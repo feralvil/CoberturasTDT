@@ -1,0 +1,1231 @@
+Equipo = ALPUENTE I
+Código HW = CRE00P01
+Código SW = CRE20L4E
+Número de Serie = 2009.298/02
+Archivos de Versiones:
+	Sup. Entorno B2	413172 B	14/06/13 16:39:58
+	BCRE33	59840 B	02/09/10 14:29:31
+Archivos de Configuración:
+	btesasms.ini	786 B	13/11/15 12:26:51
+	ipcfg.ini	1096 B	13/05/13 14:36:59
+	config.ini	2046 B	03/02/10 12:07:47
+Archivos Transferidos:
+Configuración Ficha Extendida:
+	Nombre = ALPUENTE I
+	Número de Tarjetas = 0
+	Número de Transmisores = 0
+	Número de Supervisores = 0
+	Número de Transmisores 6000 = 6
+	Número de UCAs Transmisores = 0
+	Número de Sup.Puntos = 0
+	Número de Compactos = 0
+	Fichero de Configuración = config.ini
+Configuración Ficha de Comunicaciones:
+	Dirección IP del Equipo = 0.0.0.0
+	Teléfono de Contacto = 
+	Dirección IP Asignada por el Usuario = SI
+	Dirección IP del Centro Nodal = 172.16.106.89
+	Puerto "btesa" = 49152
+	Protocolo SNMP = NO
+Rearme = OFF
+ASI MTR1 = OFF
+GENERAL MTR1 = OFF
+Estado 2 = OFF
+Estado 3 = OFF
+Estado 4 = OFF
+GPS 1 = OFF
+POWER GPS1 = ON
+Estado 7 = OFF
+POWER GPS2 = ON
+Estado 9 = OFF
+Estado 10 = OFF
+Estado 11 = OFF
+Estado 12 = OFF
+Estado 13 = OFF
+Estado 14 = OFF
+Estado 15 = OFF
+Relé 0 = OFF
+Relé 1 = OFF
+Relé 2 = OFF
+Relé 3 = OFF
+Relé 4 = OFF
+Relé 5 = OFF
+Relé 6 = OFF
+Relé 7 = OFF
+Colector abierto 0 = OFF
+Colector abierto 1 = OFF
+Colector abierto 2 = OFF
+Colector abierto 3 = OFF
+Colector abierto 4 = OFF
+Colector abierto 5 = OFF
+Colector abierto 6 = OFF
+Colector abierto 7 = OFF
+Medida 0 = 0,00
+Medida 1 = 0,00
+Medida 2 = 0,00
+Medida 3 = 0,00
+Medida 4 = 0,00
+Medida 5 = 0,00
+Medida 6 = 0,00
+Medida 7 = 0,00
+Expansión 0 = 0,00
+Expansión 1 = 0,00
+Alimentación 1 = 0,00
+Alimentación 2 = 0,00
+Temp. Sistema = 29,00 ºC
+Expansión 0 = OFF
+Expansión 1 = OFF
+Expansión 2 = OFF
+Expansión 3 = OFF
+Horario = 06/06/16 10:15:31
+_______________________________________________
+Equipo = ALPUENTE I 58
+Código HW = TTD21A01
+Código SW = LCM52L46
+Número de Serie = 2008.706/84
+Archivos de Versiones:
+	LCM52 Estandar	158376 B	04/03/10 15:16:44
+	Boot LCM52	57060 B	25/07/06 18:01:42
+Archivos de Configuración:
+Archivos Transferidos:
+Configuración Ficha Extendida:
+	Módulos:
+		Núm. Excitadores = 1
+	Nombre = ALPUENTE I 58
+	Canal = 58
+	Potencia Nominal = 20 W
+	Configuración:
+		Digital
+		Transmisor
+		Simple Tx
+		Habilitar IP = NO
+		Amps 485 = NO
+		Periférico = NO
+		Excs 485 = SI
+Rearme = OFF
+Rearme Alarmas = OFF
+Orden Arranque = ON
+Modo Operación = AUTO
+Modo Control = REMOTO
+Estado = Operativo
+Excitador Preparado = SI
+Traba Exterior = SI
+Fallo Fuentes = NO
+Alimentación Pasos Amplificadores = SI
+Fallo Térmica Amplificadores = NO
+Potencia Directa = 23 W
+Potencia Reflejada = 0 W
+Tensión CAG = 4,18 V
+Horario = 06/06/16 10:15:04
+Módulos Presentes = Todos Presentes
+_______________________________________________
+Equipo = Excitador
+Código HW = CP006C01
+Código SW = CP006L50
+Número de Serie = 2008.485/84
+Archivos de Versiones:
+	TD 6500/7000	164428 B	20/11/07 12:24:00
+	Boot CP067P01	51160 B	12/06/07 11:12:47
+Archivos de Configuración:
+Archivos Transferidos:
+Configuración Ficha Extendida:
+	Entidad = A
+	Configuración:
+		Digital
+		Transmisor
+		Modulador = Interna
+		GPS 485 = NO
+		Referencia Externa = NO
+		SFN
+		Quitar puesta en marcha si parado = NO
+		Orden arranque por Hardware = NO
+Rearme Alarmas = OFF
+Estado = RF Encendido | Squelch Inactivo
+Mute = OFF
+Orden Arranque = ON
+¿Presencia ASI afecta al estado? = SI
+Disponible = SI
+Presencia ASI = SI
+28 VC = 27,89 V
+28 VIN = 28,05 V
++12 V = 12,09 V
+-12V = -12,02 V
++5V = 4,91 V
+Modo Operación = AUTO
+¿GPS sinc. afecta al estado? = NO
+Modo Control = REMOTO
+Módulos = Todos Presentes
+Averías = Ninguna
+Control Potencia = AUTO
+Rearme = OFF
+_______________________________________________
+Equipo = Convertidor
+Código HW = UCJ00C11
+Código SW = UCJ00L12
+Número de Serie = 2009.323/09
+Rearme = OFF
+Desenganche = NO
+OL Externo = NO
+Norma = D3615
+Canal = 58
+Offset = 0
+Ajuste Fino = 0
+PLLCV = 4,00 V
+VAMP2A = 27,71 V
+VAMP2B = 27,45 V
+Ajuste GCV = 2,05 V
+_______________________________________________
+Equipo = FI Transmisión Digital
+Código HW = DIF00C01
+Código SW = DIF00L12
+Número de Serie = 2008.431/41
+Rearme = OFF
+Configuración = Transmisor | DVB | Modulador Interno | UBS
+Nivel Entrada FI = -0,11 dBm
+Potencia FI Salida = -8,33 dBm
+Tensión CAG = 4,71 V
+Tensión VDFI = 3,81 V
+Potencia Exc. = -0,30 dB
+Tensión VDTX = 4,70 V
+Entrada FI = SI
+Salida FI = SI
+Mute Externo = NO
+Sobretemperatura Amp = NO
+IF Out = ON
+Precorrector = OFF
+Squelch = OFF
+Control Potencia = AUTO
+Ajuste Potencia (AUTO) = 455
+Ajuste Potencia (MAN) = 450
+Ganancia Ecualizador = 385
+Ajuste Fase Umbral 1 = 0,00 %
+Ajuste Fase Eficiencia 1 = 0,00 %
+Ajuste Fase Umbral 2 = 0,00 %
+Ajuste Fase Eficiencia 2 = 0,00 %
+Ajuste Umbral Ampl. 1 = 100,00 %
+Ajuste Umbral Ampl. 2 = 100,00 %
+_______________________________________________
+Equipo = Modulador
+Código HW = DVC00C01
+Código SW = MDV00L28
+Número de Serie = 2008.197/30
+Archivos de Versiones:
+	Mod.Digital	150972 B	20/05/08 13:50:28
+	Boot DVC00C01	46340 B	25/10/06 11:39:41
+Archivos de Configuración:
+Archivos Transferidos:
+Configuración Ficha Extendida:
+	Tipo = Transmisor
+	DVB = DVB-T
+	Modulación:
+		Modo jerárquico = Ninguno
+		Intervalo guarda = 1/4
+		Code rate HP = 2/3
+		Code rate LP = 1/2
+		Modo IFFT = 8k
+		Constelación = 64QAM
+		Ancho banda = 8 MHz
+	Frecuencia FI = 36150000 Hz
+	Nivel FI = -6,0 dB
+	Red = SFN
+	Control modo Tx por TS = ON
+	Dirección SFN = 0
+	Precorrector no lineal = ON
+	Precorrector lineal = ON
+	Ganancia precorrector = 12,0 dB
+	Nivel recorte = 0,0 dB
+	Espectro de salida:
+		Filtro ventana = ON
+		Polaridad = Invertida
+		Roll Off = 1/128
+	Referencias:
+		Referencia 10MHz = Externa
+		Impedancia entrada referencia 10MHz = 50 ohm
+		Nivel disparo 1PPS = 1,7 V
+		Impedancia entrada referencia 1PPS = 50 ohm
+		Modulador disponible bajo condiciones = Relajadas
+	Interleaver = Nativo
+	Celda habilitada = NO
+	Celda Identificador = 0
+Rearme = OFF
+Salida FI = ON
+Modulador disponible = SI
+Entrada ASI A = PRESENTE
+Entrada ASI B = AUSENTE
+MIPs válidos = SI
+Enganche Osciladores = Referencia 10 MHz | Referencia 27 MHz | Reloj de sistema | Referencia 1PPS | PLL entrada HP | Ajuste 1PPS | Ajuste reloj de sistema 
+Sincronización = Sincronizado
+Temperatura 1 = 34,00 ºC
+Temperatura 2 = 33,00 ºC
+Retardo actual SFN = 7500000 x 100 ns
+Margen retardo entrada HP = 4131377 x 100 ns
+Margen retardo entrada LP = 0 x 100 ns
+Ajuste retardo SFN = 0 x 100 ns
+Entrada Principal = ASI A
+Conmutación Automática = ON
+Salida Monitorado = Entrada HP
+Modo Test = OFF
+Primera portadora eliminada = 0
+Última portadora eliminada = 0
+Longitud secuencia PRBS = 2^15
+Punto inserción PRBS = Punto 1
+_______________________________________________
+Equipo = ALPUENTE I  22
+Código HW = TTD21A01
+Código SW = LCM52L49
+Número de Serie = 2008.706/06
+Archivos de Versiones:
+	LCM52 Estandar	164812 B	06/05/11 15:56:12
+	Boot LCM52	57060 B	25/07/06 18:01:42
+Archivos de Configuración:
+Archivos Transferidos:
+Configuración Ficha Extendida:
+	Módulos:
+		Núm. Excitadores = 1
+	Nombre = ALPUENTE I  22
+	Canal = 22
+	Potencia Nominal = 20 W
+	Configuración:
+		Digital
+		Transmisor
+		Simple Tx
+		Habilitar IP = NO
+		Amps 485 = NO
+		Periférico = NO
+		Excs 485 = SI
+Rearme = OFF
+Rearme Alarmas = OFF
+Orden Arranque = ON
+Modo Operación = AUTO
+Modo Control = REMOTO
+Estado = Operativo
+Excitador Preparado = SI
+Traba Exterior = SI
+Fallo Fuentes = NO
+Alimentación Pasos Amplificadores = SI
+Fallo Térmica Amplificadores = NO
+Potencia Directa = 25 W
+Potencia Reflejada = 1 W
+Tensión CAG = 4,35 V
+Horario = 06/06/16 10:15:04
+Módulos Presentes = Todos Presentes
+_______________________________________________
+Equipo = Excitador
+Código HW = CP006C01
+Código SW = CP006L58
+Número de Serie = 2008.485/79
+Archivos de Versiones:
+	TD 6500/7000	194876 B	23/05/11 09:54:19
+	Boot CP067P01	51160 B	12/06/07 11:12:47
+Archivos de Configuración:
+Archivos Transferidos:
+Configuración Ficha Extendida:
+	Entidad = A
+	Configuración:
+		Dual Cast = NO
+		Híbrido = NO
+		Digital
+		Transmisor
+		Modulador Btesa = NO
+		Modulador Teamcast = NO
+		Modulador = Interna
+		GPS 485 = NO
+		Referencia Externa = NO
+		SFN
+		Quitar puesta en marcha si parado = SI
+		Orden arranque por Hardware = NO
+Rearme Alarmas = OFF
+Estado = RF Encendido | Squelch Inactivo
+Mute = OFF
+Orden Arranque = ON
+¿Presencia ASI afecta al estado? = SI
+Disponible = SI
+Presencia ASI = SI
+28 VC = 27,73 V
+28 VIN = 27,89 V
++12 V = 12,09 V
+-12V = -12,10 V
++5V = 4,91 V
+Modo Operación = AUTO
+¿GPS sinc. afecta al estado? = NO
+Modo Control = REMOTO
+Módulos = Todos Presentes
+Averías = Ninguna
+Control Potencia = AUTO
+Rearme = OFF
+_______________________________________________
+Equipo = Convertidor
+Código HW = UCJ00C11
+Código SW = UCJ00L12
+Número de Serie = 2009.323/06
+Rearme = OFF
+Desenganche = NO
+OL Externo = NO
+Norma = D3615
+Canal = 22
+Offset = 0
+Ajuste Fino = 0
+PLLCV = 4,43 V
+VAMP2A = 27,71 V
+VAMP2B = 27,71 V
+Ajuste GCV = 2,64 V
+_______________________________________________
+Equipo = FI Transmisión Digital
+Código HW = DIF00C01
+Código SW = DIF00L12
+Número de Serie = 2008.431/37
+Rearme = OFF
+Configuración = Transmisor | DVB | Modulador Interno | UBS
+Nivel Entrada FI = -0,44 dBm
+Potencia FI Salida = -8,47 dBm
+Tensión CAG = 4,75 V
+Tensión VDFI = 3,81 V
+Potencia Exc. = -0,80 dB
+Tensión VDTX = 4,88 V
+Entrada FI = SI
+Salida FI = SI
+Mute Externo = NO
+Sobretemperatura Amp = NO
+IF Out = ON
+Precorrector = OFF
+Squelch = OFF
+Control Potencia = AUTO
+Ajuste Potencia (AUTO) = 464
+Ajuste Potencia (MAN) = 445
+Ganancia Ecualizador = 385
+Ajuste Fase Umbral 1 = 0,00 %
+Ajuste Fase Eficiencia 1 = 0,00 %
+Ajuste Fase Umbral 2 = 0,00 %
+Ajuste Fase Eficiencia 2 = 0,00 %
+Ajuste Umbral Ampl. 1 = 100,00 %
+Ajuste Umbral Ampl. 2 = 100,00 %
+_______________________________________________
+Equipo = Modulador
+Código HW = DVC00C01
+Código SW = MDV00L28
+Número de Serie = 2009.197/26
+Archivos de Versiones:
+	Mod.Digital	150972 B	20/05/08 13:50:28
+	Boot DVC00C01	46340 B	25/10/06 11:39:41
+Archivos de Configuración:
+Archivos Transferidos:
+Configuración Ficha Extendida:
+	Tipo = Transmisor
+	DVB = DVB-T
+	Modulación:
+		Modo jerárquico = Ninguno
+		Intervalo guarda = 1/4
+		Code rate HP = 2/3
+		Code rate LP = 1/2
+		Modo IFFT = 8k
+		Constelación = 64QAM
+		Ancho banda = 8 MHz
+	Frecuencia FI = 36150000 Hz
+	Nivel FI = -6,0 dB
+	Red = SFN
+	Control modo Tx por TS = ON
+	Dirección SFN = 0
+	Precorrector no lineal = ON
+	Precorrector lineal = OFF
+	Ganancia precorrector = 12,0 dB
+	Nivel recorte = 0,0 dB
+	Espectro de salida:
+		Filtro ventana = ON
+		Polaridad = Invertida
+		Roll Off = 1/128
+	Referencias:
+		Referencia 10MHz = Externa
+		Impedancia entrada referencia 10MHz = 50 ohm
+		Nivel disparo 1PPS = 1,7 V
+		Impedancia entrada referencia 1PPS = 50 ohm
+		Modulador disponible bajo condiciones = Relajadas
+	Interleaver = Nativo
+	Celda habilitada = NO
+	Celda Identificador = 0
+Rearme = OFF
+Salida FI = ON
+Modulador disponible = SI
+Entrada ASI A = PRESENTE
+Entrada ASI B = AUSENTE
+MIPs válidos = SI
+Enganche Osciladores = Referencia 10 MHz | Referencia 27 MHz | Reloj de sistema | Referencia 1PPS | PLL entrada HP | Ajuste 1PPS | Ajuste reloj de sistema 
+Sincronización = Sincronizado
+Temperatura 1 = 34,00 ºC
+Temperatura 2 = 33,00 ºC
+Retardo actual SFN = 7500000 x 100 ns
+Margen retardo entrada HP = 3566977 x 100 ns
+Margen retardo entrada LP = 0 x 100 ns
+Ajuste retardo SFN = 0 x 100 ns
+Entrada Principal = ASI A
+Conmutación Automática = ON
+Salida Monitorado = Entrada HP
+Modo Test = OFF
+Primera portadora eliminada = 0
+Última portadora eliminada = 0
+Longitud secuencia PRBS = 2^15
+Punto inserción PRBS = Punto 1
+_______________________________________________
+Equipo = ALPUENTE I  43
+Código HW = TTD21A01
+Código SW = LCM52L44
+Número de Serie = 2008.706/15
+Archivos de Versiones:
+	LCM52 Estandar	132984 B	16/07/08 15:15:58
+	Boot LCM52	57060 B	25/07/06 18:01:42
+Archivos de Configuración:
+Archivos Transferidos:
+Configuración Ficha Extendida:
+	Módulos:
+		Núm. Excitadores = 1
+	Nombre = ALPUENTE I  43
+	Canal = 43
+	Potencia Nominal = 25 W
+	Configuración:
+		Digital
+		Transmisor
+		Simple Tx
+		Habilitar IP = NO
+		Amps 485 = NO
+		Periférico = NO
+		Excs 485 = SI
+Rearme = OFF
+Rearme Alarmas = OFF
+Orden Arranque = ON
+Modo Operación = AUTO
+Modo Control = REMOTO
+Estado = Operativo
+Excitador Preparado = SI
+Traba Exterior = SI
+Fallo Fuentes = NO
+Alimentación Pasos Amplificadores = SI
+Fallo Térmica Amplificadores = NO
+Potencia Directa = 22 W
+Potencia Reflejada = 0 W
+Tensión CAG = 3,66 V
+Horario = 06/06/16 10:15:04
+Módulos Presentes = Todos Presentes
+_______________________________________________
+Equipo = Excitador
+Código HW = CP006C01
+Código SW = CP006L50
+Número de Serie = 2008.485/80
+Archivos de Versiones:
+	TD 6500/7000	164428 B	20/11/07 12:24:00
+	Boot CP067P01	51160 B	12/06/07 11:12:47
+Archivos de Configuración:
+Archivos Transferidos:
+Configuración Ficha Extendida:
+	Entidad = A
+	Configuración:
+		Digital
+		Transmisor
+		Modulador = Interna
+		GPS 485 = NO
+		Referencia Externa = NO
+		SFN
+		Quitar puesta en marcha si parado = NO
+		Orden arranque por Hardware = NO
+Rearme Alarmas = OFF
+Estado = RF Encendido | Squelch Inactivo
+Mute = OFF
+Orden Arranque = ON
+¿Presencia ASI afecta al estado? = SI
+Disponible = SI
+Presencia ASI = SI
+28 VC = 28,22 V
+28 VIN = 28,38 V
++12 V = 12,02 V
+-12V = -12,02 V
++5V = 4,97 V
+Modo Operación = AUTO
+¿GPS sinc. afecta al estado? = NO
+Modo Control = REMOTO
+Módulos = Todos Presentes
+Averías = Ninguna
+Control Potencia = AUTO
+Rearme = OFF
+_______________________________________________
+Equipo = Convertidor
+Código HW = UCJ00C11
+Código SW = UCJ00L12
+Número de Serie = 2009.323/08
+Rearme = OFF
+Desenganche = NO
+OL Externo = NO
+Norma = D3615
+Canal = 43
+Offset = 0
+Ajuste Fino = 0
+PLLCV = 4,00 V
+VAMP2A = 27,84 V
+VAMP2B = 27,71 V
+Ajuste GCV = 1,61 V
+_______________________________________________
+Equipo = FI Transmisión Digital
+Código HW = DIF00C01
+Código SW = DIF00L12
+Número de Serie = 2008.431/50
+Rearme = OFF
+Configuración = Transmisor | DVB | Modulador Interno | UBS
+Nivel Entrada FI = 0,29 dBm
+Potencia FI Salida = -6,75 dBm
+Tensión CAG = 5,48 V
+Tensión VDFI = 4,48 V
+Potencia Exc. = 0,27 dB
+Tensión VDTX = 4,70 V
+Entrada FI = SI
+Salida FI = SI
+Mute Externo = NO
+Sobretemperatura Amp = NO
+IF Out = ON
+Precorrector = OFF
+Squelch = OFF
+Control Potencia = AUTO
+Ajuste Potencia (AUTO) = 431
+Ajuste Potencia (MAN) = 280
+Ganancia Ecualizador = 385
+Ajuste Fase Umbral 1 = 0,00 %
+Ajuste Fase Eficiencia 1 = 0,00 %
+Ajuste Fase Umbral 2 = 0,00 %
+Ajuste Fase Eficiencia 2 = 0,00 %
+Ajuste Umbral Ampl. 1 = 100,00 %
+Ajuste Umbral Ampl. 2 = 100,00 %
+_______________________________________________
+Equipo = Modulador
+Código HW = DVC00C01
+Código SW = MDV00L28
+Número de Serie = 2009.197/29
+Archivos de Versiones:
+	Mod.Digital	150972 B	20/05/08 13:50:28
+	Boot DVC00C01	46340 B	25/10/06 11:39:41
+Archivos de Configuración:
+Archivos Transferidos:
+Configuración Ficha Extendida:
+	Tipo = Transmisor
+	DVB = DVB-T
+	Modulación:
+		Modo jerárquico = Ninguno
+		Intervalo guarda = 1/4
+		Code rate HP = 2/3
+		Code rate LP = 1/2
+		Modo IFFT = 8k
+		Constelación = 64QAM
+		Ancho banda = 8 MHz
+	Frecuencia FI = 36150000 Hz
+	Nivel FI = -7,0 dB
+	Red = SFN
+	Control modo Tx por TS = ON
+	Dirección SFN = 0
+	Precorrector no lineal = ON
+	Precorrector lineal = ON
+	Ganancia precorrector = 12,0 dB
+	Nivel recorte = 0,0 dB
+	Espectro de salida:
+		Filtro ventana = ON
+		Polaridad = Invertida
+		Roll Off = 1/128
+	Referencias:
+		Referencia 10MHz = Externa
+		Impedancia entrada referencia 10MHz = 50 ohm
+		Nivel disparo 1PPS = 1,7 V
+		Impedancia entrada referencia 1PPS = 50 ohm
+		Modulador disponible bajo condiciones = Relajadas
+	Interleaver = Nativo
+	Celda habilitada = NO
+	Celda Identificador = 0
+Rearme = OFF
+Salida FI = ON
+Modulador disponible = SI
+Entrada ASI A = PRESENTE
+Entrada ASI B = AUSENTE
+MIPs válidos = SI
+Enganche Osciladores = Referencia 10 MHz | Referencia 27 MHz | Reloj de sistema | Referencia 1PPS | PLL entrada HP | Ajuste 1PPS | Ajuste reloj de sistema 
+Sincronización = Sincronizado
+Temperatura 1 = 32,00 ºC
+Temperatura 2 = 31,00 ºC
+Retardo actual SFN = 7500000 x 100 ns
+Margen retardo entrada HP = 4761510 x 100 ns
+Margen retardo entrada LP = 0 x 100 ns
+Ajuste retardo SFN = 0 x 100 ns
+Entrada Principal = ASI A
+Conmutación Automática = ON
+Salida Monitorado = Entrada HP
+Modo Test = OFF
+Primera portadora eliminada = 0
+Última portadora eliminada = 0
+Longitud secuencia PRBS = 2^15
+Punto inserción PRBS = Punto 1
+_______________________________________________
+Equipo = ALPUENTE I  57
+Código HW = TTD21A01
+Código SW = LCM52L46
+Número de Serie = 2008.706/32
+Archivos de Versiones:
+	LCM52 Estandar	158376 B	04/03/10 15:16:44
+	Boot LCM52	57060 B	25/07/06 18:01:42
+Archivos de Configuración:
+Archivos Transferidos:
+Configuración Ficha Extendida:
+	Módulos:
+		Núm. Excitadores = 1
+	Nombre = ALPUENTE I  57
+	Canal = 57
+	Potencia Nominal = 20 W
+	Configuración:
+		Digital
+		Transmisor
+		Simple Tx
+		Habilitar IP = NO
+		Amps 485 = NO
+		Periférico = NO
+		Excs 485 = SI
+Rearme = OFF
+Rearme Alarmas = OFF
+Orden Arranque = ON
+Modo Operación = AUTO
+Modo Control = REMOTO
+Estado = Operativo
+Excitador Preparado = SI
+Traba Exterior = SI
+Fallo Fuentes = NO
+Alimentación Pasos Amplificadores = SI
+Fallo Térmica Amplificadores = NO
+Potencia Directa = 26 W
+Potencia Reflejada = 0 W
+Tensión CAG = 4,43 V
+Horario = 06/06/16 10:15:02
+Módulos Presentes = Todos Presentes
+_______________________________________________
+Equipo = Excitador
+Código HW = CP006C01
+Código SW = CP006L50
+Número de Serie = 2008.485/85
+Archivos de Versiones:
+	TD 6500/7000	164428 B	20/11/07 12:24:00
+	Boot CP067P01	51160 B	12/06/07 11:12:47
+Archivos de Configuración:
+Archivos Transferidos:
+Configuración Ficha Extendida:
+	Entidad = A
+	Configuración:
+		Digital
+		Transmisor
+		Modulador = Interna
+		GPS 485 = NO
+		Referencia Externa = NO
+		SFN
+		Quitar puesta en marcha si parado = NO
+		Orden arranque por Hardware = NO
+Rearme Alarmas = OFF
+Estado = RF Encendido | Squelch Inactivo
+Mute = OFF
+Orden Arranque = ON
+¿Presencia ASI afecta al estado? = SI
+Disponible = SI
+Presencia ASI = SI
+28 VC = 27,89 V
+28 VIN = 28,22 V
++12 V = 12,16 V
+-12V = -12,10 V
++5V = 4,97 V
+Modo Operación = AUTO
+¿GPS sinc. afecta al estado? = NO
+Modo Control = REMOTO
+Módulos = Todos Presentes
+Averías = Ninguna
+Control Potencia = AUTO
+Rearme = OFF
+_______________________________________________
+Equipo = Convertidor
+Código HW = UCJ00C11
+Código SW = UCJ00L12
+Número de Serie = 2009.323/10
+Rearme = OFF
+Desenganche = NO
+OL Externo = NO
+Norma = D3615
+Canal = 57
+Offset = 0
+Ajuste Fino = 0
+PLLCV = 4,00 V
+VAMP2A = 27,84 V
+VAMP2B = 27,71 V
+Ajuste GCV = 2,10 V
+_______________________________________________
+Equipo = FI Transmisión Digital
+Código HW = DIF00C01
+Código SW = DIF00L12
+Número de Serie = 2008.431/44
+Rearme = OFF
+Configuración = Transmisor | DVB | Modulador Interno | UBS
+Nivel Entrada FI = -0,11 dBm
+Potencia FI Salida = -7,67 dBm
+Tensión CAG = 4,88 V
+Tensión VDFI = 4,09 V
+Potencia Exc. = 0,27 dB
+Tensión VDTX = 5,05 V
+Entrada FI = SI
+Salida FI = SI
+Mute Externo = NO
+Sobretemperatura Amp = NO
+IF Out = ON
+Precorrector = OFF
+Squelch = OFF
+Control Potencia = AUTO
+Ajuste Potencia (AUTO) = 479
+Ajuste Potencia (MAN) = 450
+Ganancia Ecualizador = 385
+Ajuste Fase Umbral 1 = 19,61 %
+Ajuste Fase Eficiencia 1 = 19,61 %
+Ajuste Fase Umbral 2 = 19,61 %
+Ajuste Fase Eficiencia 2 = 19,61 %
+Ajuste Umbral Ampl. 1 = 9,80 %
+Ajuste Umbral Ampl. 2 = 9,80 %
+_______________________________________________
+Equipo = Modulador
+Código HW = DVC00C01
+Código SW = MDV00L28
+Número de Serie = 2009.197/25
+Archivos de Versiones:
+	Mod.Digital	150972 B	20/05/08 13:50:28
+	Boot DVC00C01	46340 B	25/10/06 11:39:41
+Archivos de Configuración:
+Archivos Transferidos:
+Configuración Ficha Extendida:
+	Tipo = Transmisor
+	DVB = DVB-T
+	Modulación:
+		Modo jerárquico = Ninguno
+		Intervalo guarda = 1/4
+		Code rate HP = 2/3
+		Code rate LP = 1/2
+		Modo IFFT = 8k
+		Constelación = 64QAM
+		Ancho banda = 8 MHz
+	Frecuencia FI = 36150000 Hz
+	Nivel FI = -6,0 dB
+	Red = SFN
+	Control modo Tx por TS = ON
+	Dirección SFN = 0
+	Precorrector no lineal = ON
+	Precorrector lineal = ON
+	Ganancia precorrector = 12,0 dB
+	Nivel recorte = 0,0 dB
+	Espectro de salida:
+		Filtro ventana = ON
+		Polaridad = Invertida
+		Roll Off = 1/128
+	Referencias:
+		Referencia 10MHz = Externa
+		Impedancia entrada referencia 10MHz = 50 ohm
+		Nivel disparo 1PPS = 1,7 V
+		Impedancia entrada referencia 1PPS = 50 ohm
+		Modulador disponible bajo condiciones = Relajadas
+	Interleaver = Nativo
+	Celda habilitada = NO
+	Celda Identificador = 0
+Rearme = OFF
+Salida FI = ON
+Modulador disponible = SI
+Entrada ASI A = PRESENTE
+Entrada ASI B = AUSENTE
+MIPs válidos = SI
+Enganche Osciladores = Referencia 10 MHz | Referencia 27 MHz | Reloj de sistema | Referencia 1PPS | PLL entrada HP | Ajuste 1PPS | Ajuste reloj de sistema 
+Sincronización = Sincronizado
+Temperatura 1 = 34,00 ºC
+Temperatura 2 = 32,00 ºC
+Retardo actual SFN = 6099200 x 100 ns
+Margen retardo entrada HP = 61199 x 100 ns
+Margen retardo entrada LP = 0 x 100 ns
+Ajuste retardo SFN = -900800 x 100 ns
+Entrada Principal = ASI A
+Conmutación Automática = ON
+Salida Monitorado = Entrada HP
+Modo Test = OFF
+Primera portadora eliminada = 0
+Última portadora eliminada = 0
+Longitud secuencia PRBS = 2^15
+Punto inserción PRBS = Punto 1
+_______________________________________________
+Equipo = ALPUENTE I  40
+Código HW = TTD21A01
+Código SW = LCM52L46
+Número de Serie = 2008.706/81
+Archivos de Versiones:
+	LCM52 Estandar	158376 B	04/03/10 15:16:44
+	Boot LCM52	57060 B	25/07/06 18:01:42
+Archivos de Configuración:
+Archivos Transferidos:
+Configuración Ficha Extendida:
+	Módulos:
+		Núm. Excitadores = 1
+	Nombre = ALPUENTE I  40
+	Canal = 40
+	Potencia Nominal = 25 W
+	Configuración:
+		Digital
+		Transmisor
+		Simple Tx
+		Habilitar IP = NO
+		Amps 485 = NO
+		Periférico = NO
+		Excs 485 = SI
+Rearme = OFF
+Rearme Alarmas = OFF
+Orden Arranque = ON
+Modo Operación = AUTO
+Modo Control = REMOTO
+Estado = Operativo
+Excitador Preparado = SI
+Traba Exterior = SI
+Fallo Fuentes = NO
+Alimentación Pasos Amplificadores = SI
+Fallo Térmica Amplificadores = NO
+Potencia Directa = 23 W
+Potencia Reflejada = 0 W
+Tensión CAG = 3,80 V
+Horario = 06/06/16 10:15:03
+Módulos Presentes = Todos Presentes
+_______________________________________________
+Equipo = Excitador
+Código HW = CP006C01
+Código SW = CP006L50
+Número de Serie = 2008.485/71
+Archivos de Versiones:
+	TD 6500/7000	164428 B	20/11/07 12:24:00
+	Boot CP067P01	51160 B	12/06/07 11:12:47
+Archivos de Configuración:
+Archivos Transferidos:
+Configuración Ficha Extendida:
+	Entidad = A
+	Configuración:
+		Digital
+		Transmisor
+		Modulador = Interna
+		GPS 485 = NO
+		Referencia Externa = NO
+		SFN
+		Quitar puesta en marcha si parado = NO
+		Orden arranque por Hardware = NO
+Rearme Alarmas = OFF
+Estado = RF Encendido | Squelch Inactivo
+Mute = OFF
+Orden Arranque = ON
+¿Presencia ASI afecta al estado? = SI
+Disponible = SI
+Presencia ASI = SI
+28 VC = 27,89 V
+28 VIN = 28,05 V
++12 V = 12,02 V
+-12V = -11,95 V
++5V = 4,91 V
+Modo Operación = AUTO
+¿GPS sinc. afecta al estado? = NO
+Modo Control = REMOTO
+Módulos = Todos Presentes
+Averías = Ninguna
+Control Potencia = AUTO
+Rearme = OFF
+_______________________________________________
+Equipo = Convertidor
+Código HW = UCJ00C11
+Código SW = UCJ00L12
+Número de Serie = 2009.323/04
+Rearme = OFF
+Desenganche = NO
+OL Externo = NO
+Norma = D3615
+Canal = 40
+Offset = 0
+Ajuste Fino = 0
+PLLCV = 4,08 V
+VAMP2A = 27,84 V
+VAMP2B = 27,97 V
+Ajuste GCV = 1,58 V
+_______________________________________________
+Equipo = FI Transmisión Digital
+Código HW = DIF00C01
+Código SW = DIF00L12
+Número de Serie = 2008.431/47
+Rearme = OFF
+Configuración = Transmisor | DVB | Modulador Interno | UBS
+Nivel Entrada FI = 0,19 dBm
+Potencia FI Salida = -8,47 dBm
+Tensión CAG = 4,71 V
+Tensión VDFI = 3,81 V
+Potencia Exc. = -0,10 dB
+Tensión VDTX = 4,32 V
+Entrada FI = SI
+Salida FI = SI
+Mute Externo = NO
+Sobretemperatura Amp = NO
+IF Out = ON
+Precorrector = OFF
+Squelch = OFF
+Control Potencia = AUTO
+Ajuste Potencia (AUTO) = 436
+Ajuste Potencia (MAN) = 261
+Ganancia Ecualizador = 385
+Ajuste Fase Umbral 1 = 19,61 %
+Ajuste Fase Eficiencia 1 = 19,61 %
+Ajuste Fase Umbral 2 = 19,61 %
+Ajuste Fase Eficiencia 2 = 19,61 %
+Ajuste Umbral Ampl. 1 = 9,80 %
+Ajuste Umbral Ampl. 2 = 9,80 %
+_______________________________________________
+Equipo = Modulador
+Código HW = DVC00C01
+Código SW = MDV00L28
+Número de Serie = 2009.197/13
+Archivos de Versiones:
+	Mod.Digital	150972 B	20/05/08 13:50:28
+	Boot DVC00C01	46340 B	25/10/06 11:39:41
+Archivos de Configuración:
+Archivos Transferidos:
+Configuración Ficha Extendida:
+	Tipo = Transmisor
+	DVB = DVB-T
+	Modulación:
+		Modo jerárquico = Ninguno
+		Intervalo guarda = 1/4
+		Code rate HP = 2/3
+		Code rate LP = 1/2
+		Modo IFFT = 8k
+		Constelación = 64QAM
+		Ancho banda = 8 MHz
+	Frecuencia FI = 36150000 Hz
+	Nivel FI = -6,0 dB
+	Red = SFN
+	Control modo Tx por TS = ON
+	Dirección SFN = 0
+	Precorrector no lineal = ON
+	Precorrector lineal = ON
+	Ganancia precorrector = 12,0 dB
+	Nivel recorte = 0,0 dB
+	Espectro de salida:
+		Filtro ventana = ON
+		Polaridad = Invertida
+		Roll Off = 1/128
+	Referencias:
+		Referencia 10MHz = Externa
+		Impedancia entrada referencia 10MHz = 50 ohm
+		Nivel disparo 1PPS = 1,7 V
+		Impedancia entrada referencia 1PPS = 50 ohm
+		Modulador disponible bajo condiciones = Relajadas
+	Interleaver = Nativo
+	Celda habilitada = NO
+	Celda Identificador = 0
+Rearme = OFF
+Salida FI = ON
+Modulador disponible = SI
+Entrada ASI A = PRESENTE
+Entrada ASI B = AUSENTE
+MIPs válidos = SI
+Enganche Osciladores = Referencia 10 MHz | Referencia 27 MHz | Reloj de sistema | Referencia 1PPS | PLL entrada HP | Ajuste 1PPS | Ajuste reloj de sistema 
+Sincronización = Sincronizado
+Temperatura 1 = 33,00 ºC
+Temperatura 2 = 32,00 ºC
+Retardo actual SFN = 7500000 x 100 ns
+Margen retardo entrada HP = 4759999 x 100 ns
+Margen retardo entrada LP = 0 x 100 ns
+Ajuste retardo SFN = 0 x 100 ns
+Entrada Principal = ASI A
+Conmutación Automática = ON
+Salida Monitorado = Entrada HP
+Modo Test = OFF
+Primera portadora eliminada = 0
+Última portadora eliminada = 0
+Longitud secuencia PRBS = 2^15
+Punto inserción PRBS = Punto 1
+_______________________________________________
+Equipo = ALPUENTE I  46
+Código HW = TTD21A01
+Código SW = LCM52L46
+Número de Serie = 2008.706/79
+Archivos de Versiones:
+	LCM52 Estandar	158376 B	04/03/10 15:16:44
+	Boot LCM52	57060 B	25/07/06 18:01:42
+Archivos de Configuración:
+Archivos Transferidos:
+Configuración Ficha Extendida:
+	Módulos:
+		Núm. Excitadores = 1
+	Nombre = ALPUENTE I  46
+	Canal = 46
+	Potencia Nominal = 25 W
+	Configuración:
+		Digital
+		Transmisor
+		Simple Tx
+		Habilitar IP = NO
+		Amps 485 = NO
+		Periférico = NO
+		Excs 485 = SI
+Rearme = OFF
+Rearme Alarmas = OFF
+Orden Arranque = ON
+Modo Operación = AUTO
+Modo Control = REMOTO
+Estado = Operativo
+Excitador Preparado = SI
+Traba Exterior = SI
+Fallo Fuentes = NO
+Alimentación Pasos Amplificadores = SI
+Fallo Térmica Amplificadores = NO
+Potencia Directa = 23 W
+Potencia Reflejada = 0 W
+Tensión CAG = 3,75 V
+Horario = 06/06/16 10:15:02
+Módulos Presentes = Todos Presentes
+_______________________________________________
+Equipo = Excitador
+Código HW = CP006C01
+Código SW = CP006L50
+Número de Serie = 2008.485/86
+Archivos de Versiones:
+	TD 6500/7000	164428 B	20/11/07 12:24:00
+	Boot CP067P01	51160 B	12/06/07 11:12:47
+Archivos de Configuración:
+Archivos Transferidos:
+Configuración Ficha Extendida:
+	Entidad = A
+	Configuración:
+		Digital
+		Transmisor
+		Modulador = Interna
+		GPS 485 = NO
+		Referencia Externa = NO
+		SFN
+		Quitar puesta en marcha si parado = NO
+		Orden arranque por Hardware = NO
+Rearme Alarmas = OFF
+Estado = RF Encendido | Squelch Inactivo
+Mute = OFF
+Orden Arranque = ON
+¿Presencia ASI afecta al estado? = SI
+Disponible = SI
+Presencia ASI = SI
+28 VC = 27,89 V
+28 VIN = 28,05 V
++12 V = 12,09 V
+-12V = -12,02 V
++5V = 4,97 V
+Modo Operación = AUTO
+¿GPS sinc. afecta al estado? = NO
+Modo Control = REMOTO
+Módulos = Todos Presentes
+Averías = Ninguna
+Control Potencia = AUTO
+Rearme = OFF
+_______________________________________________
+Equipo = Convertidor
+Código HW = UCJ00C11
+Código SW = UCJ00L12
+Número de Serie = 2009.323/05
+Rearme = OFF
+Desenganche = NO
+OL Externo = NO
+Norma = D3615
+Canal = 46
+Offset = 0
+Ajuste Fino = 0
+PLLCV = 3,95 V
+VAMP2A = 27,58 V
+VAMP2B = 27,45 V
+Ajuste GCV = 1,63 V
+_______________________________________________
+Equipo = FI Transmisión Digital
+Código HW = DIF00C01
+Código SW = DIF00L12
+Número de Serie = 2008.431/45
+Rearme = OFF
+Configuración = Transmisor | DVB | Modulador Interno | UBS
+Nivel Entrada FI = 0,19 dBm
+Potencia FI Salida = -7,67 dBm
+Tensión CAG = 4,84 V
+Tensión VDFI = 4,09 V
+Potencia Exc. = 0,00 dB
+Tensión VDTX = 4,26 V
+Entrada FI = SI
+Salida FI = SI
+Mute Externo = NO
+Sobretemperatura Amp = NO
+IF Out = ON
+Precorrector = OFF
+Squelch = OFF
+Control Potencia = AUTO
+Ajuste Potencia (AUTO) = 444
+Ajuste Potencia (MAN) = 417
+Ganancia Ecualizador = 385
+Ajuste Fase Umbral 1 = 0,00 %
+Ajuste Fase Eficiencia 1 = 0,00 %
+Ajuste Fase Umbral 2 = 0,00 %
+Ajuste Fase Eficiencia 2 = 0,00 %
+Ajuste Umbral Ampl. 1 = 100,00 %
+Ajuste Umbral Ampl. 2 = 100,00 %
+_______________________________________________
+Equipo = Modulador
+Código HW = DVC00C01
+Código SW = MDV00L28
+Número de Serie = 2008.197/28
+Archivos de Versiones:
+	Mod.Digital	150972 B	20/05/08 13:50:28
+	Boot DVC00C01	46340 B	25/10/06 11:39:41
+Archivos de Configuración:
+Archivos Transferidos:
+Configuración Ficha Extendida:
+	Tipo = Transmisor
+	DVB = DVB-T
+	Modulación:
+		Modo jerárquico = Ninguno
+		Intervalo guarda = 1/4
+		Code rate HP = 2/3
+		Code rate LP = 1/2
+		Modo IFFT = 8k
+		Constelación = 64QAM
+		Ancho banda = 8 MHz
+	Frecuencia FI = 36150000 Hz
+	Nivel FI = -6,0 dB
+	Red = SFN
+	Control modo Tx por TS = ON
+	Dirección SFN = 0
+	Precorrector no lineal = ON
+	Precorrector lineal = ON
+	Ganancia precorrector = 12,0 dB
+	Nivel recorte = 0,0 dB
+	Espectro de salida:
+		Filtro ventana = ON
+		Polaridad = Invertida
+		Roll Off = 1/128
+	Referencias:
+		Referencia 10MHz = Externa
+		Impedancia entrada referencia 10MHz = 50 ohm
+		Nivel disparo 1PPS = 1,7 V
+		Impedancia entrada referencia 1PPS = 50 ohm
+		Modulador disponible bajo condiciones = Relajadas
+	Interleaver = Nativo
+	Celda habilitada = NO
+	Celda Identificador = 0
+Rearme = OFF
+Salida FI = ON
+Modulador disponible = SI
+Entrada ASI A = PRESENTE
+Entrada ASI B = AUSENTE
+MIPs válidos = SI
+Enganche Osciladores = Referencia 10 MHz | Referencia 27 MHz | Reloj de sistema | Referencia 1PPS | PLL entrada HP | Ajuste 1PPS | Ajuste reloj de sistema 
+Sincronización = Sincronizado
+Temperatura 1 = 32,00 ºC
+Temperatura 2 = 31,00 ºC
+Retardo actual SFN = 7500000 x 100 ns
+Margen retardo entrada HP = 4758488 x 100 ns
+Margen retardo entrada LP = 0 x 100 ns
+Ajuste retardo SFN = 0 x 100 ns
+Entrada Principal = ASI A
+Conmutación Automática = ON
+Salida Monitorado = Entrada HP
+Modo Test = OFF
+Primera portadora eliminada = 0
+Última portadora eliminada = 0
+Longitud secuencia PRBS = 2^15
+Punto inserción PRBS = Punto 1
+_______________________________________________

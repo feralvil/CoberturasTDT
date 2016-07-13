@@ -1,0 +1,891 @@
+Equipo = FORCALL
+Código HW = CRE00P01
+Código SW = CRE20L4E
+Número de Serie = 2009838/068
+Archivos de Versiones:
+	Sup. Entorno B2	413172 B	14/06/13 16:39:58
+	Boot	60072 B	30/10/07 16:20:04
+Archivos de Configuración:
+	btesasms.ini	786 B	13/11/15 12:28:15
+	config.ini	1777 B	15/05/13 12:21:39
+	ipcfg.ini	1096 B	09/11/11 10:58:41
+Archivos Transferidos:
+Configuración Ficha Extendida:
+	Nombre = FORCALL
+	Número de Tarjetas = 0
+	Número de Transmisores = 0
+	Número de Supervisores = 0
+	Número de Transmisores 6000 = 0
+	Número de UCAs Transmisores = 0
+	Número de Sup.Puntos = 0
+	Número de Compactos = 2
+	Fichero de Configuración = config.ini
+Configuración Ficha de Comunicaciones:
+	Dirección IP del Equipo = 0.0.0.0
+	Teléfono de Contacto = 
+	Dirección IP Asignada por el Usuario = SI
+	Dirección IP del Centro Nodal = 172.16.106.89
+	Puerto "btesa" = 49152
+	Protocolo SNMP = NO
+Rearme = OFF
+ASI MTR1 = OFF
+GENERAL MTR1 = OFF
+Estado 2 = OFF
+Estado 3 = OFF
+Estado 4 = OFF
+GPS 1 = OFF
+POWER GPS1 = ON
+Estado 7 = OFF
+POWER GPS2 = ON
+Estado 9 = OFF
+Estado 10 = OFF
+Estado 11 = OFF
+Estado 12 = OFF
+Estado 13 = OFF
+Estado 14 = OFF
+Estado 15 = OFF
+Relé 0 = OFF
+Relé 1 = OFF
+Relé 2 = OFF
+Relé 3 = OFF
+Relé 4 = OFF
+Relé 5 = OFF
+Relé 6 = OFF
+Relé 7 = OFF
+Colector abierto 0 = OFF
+Colector abierto 1 = OFF
+Colector abierto 2 = OFF
+Colector abierto 3 = OFF
+Colector abierto 4 = OFF
+Colector abierto 5 = OFF
+Colector abierto 6 = OFF
+Colector abierto 7 = OFF
+Medida 0 = 0,00
+Medida 1 = 0,00
+Medida 2 = 0,00
+Medida 3 = 0,00
+Medida 4 = 0,00
+Medida 5 = 0,00
+Medida 6 = 0,00
+Medida 7 = 0,00
+Expansión 0 = 0,00
+Expansión 1 = 0,00
+Alimentación 1 = 0,00
+Alimentación 2 = 0,00
+Temp. Sistema = 29,00 ºC
+Expansión 0 = OFF
+Expansión 1 = OFF
+Expansión 2 = OFF
+Expansión 3 = OFF
+Horario = 24/06/16 08:27:32
+_______________________________________________
+Equipo = FORCAL I
+Código HW = CPD050L01
+Código SW = CPD50L22
+Número de Serie = FORCAL I
+Archivos de Versiones:
+	ControladorTDT	242988 B	21/07/09 09:52:08
+	Boot CPD050	56252 B	26/02/09 13:17:55
+Archivos de Configuración:
+	mod5.cfg	200 B	16/05/16 12:50:51
+	mod6.cfg	244 B	22/04/16 08:05:54
+	mod3.cfg	200 B	09/11/11 18:25:28
+	mod4.cfg	244 B	08/07/11 11:52:19
+	mod1.cfg	200 B	28/02/11 18:11:00
+	mod2.cfg	244 B	24/07/09 10:05:39
+Archivos Transferidos:
+	ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ	4294967295 B	01/01/70 00:59:59
+Configuración Ficha Extendida:
+	Nombre = FORCAL I
+	Idioma = Español
+	Entidad = Controlador 1
+	Canal A = No Presente
+	Canal B = Transmisor
+	Canal C = Transmisor
+	Unidad Temperatura = ºC
+	Activación Aviso Fallo Temperatura = 55 ºC
+	Cese Aviso Fallo Temperatura = 50 ºC
+	Activación Alarma Fallo Temperatura = 60 ºC
+	Cese Alarma Fallo Temperatura = 56 ºC
+	Activación Aviso  Fallo Ventiladores = 2000 rpm
+	Cese Aviso  Fallo Ventiladores = 2500 rpm
+	Activación Avería Fallo Ventiladores = 1000 rpm
+	Cese Avería Fallo Ventiladores = 1500 rpm
+Rearme = OFF
+Rearme Alarmas = OFF
+Fallo Fuente 1 = NO
+Fallo Fuente 2 = NO
+12 VIN = NO
+12 VUPS = SI
+Avería Ventiladores = NO
+Aviso Ventiladores = NO
+Resumen Estado = OK
+Resumen Estado Canal A = OFF
+Resumen Estado Canal B = OK
+Resumen Estado Canal C = OK
+Sobretemperatura = NO
+Velocidad Ventilador 1 = 5175 rpm
+Velocidad Ventilador 2 = 5040 rpm
+Velocidad Ventilador 3 = 5040 rpm
+Velocidad Ventilador 4 = 5070 rpm
+Velocidad Ventilador 5 = 4845 rpm
+Modo Operación = AUTO
+Modo Control = REMOTO
+Modo Repuesto = NO
+Arranque Ventiladores = ON
+Estado Ventiladores = ON
+Temperatura = 27 ºC
+Alarma Externa 1 = NO
+Alarma Externa 2 = NO
+Horario = 24/06/16 08:26:39
+_______________________________________________
+Equipo = Modulador
+Código HW = MDD050C10
+Código SW = MDD05028
+Número de Serie = 2009656/322
+Archivos de Versiones:
+	Mod. MDD050C10	128292 B	22/06/10 15:51:19
+	Boot MDD050P01	50096 B	05/11/07 15:11:23
+Archivos de Configuración:
+Archivos Transferidos:
+Configuración Ficha Extendida:
+	Versión HW = 2
+	Versión SW = 14
+	Unidad Temperatura = ºC
+	Activación Aviso Fallo Temperatura = 65 ºC
+	Cese Aviso Fallo Temperatura = 60 ºC
+	Activación Alarma Fallo Temperatura = 75 ºC
+	Cese Alarma Fallo Temperatura = 70 ºC
+	Doble TX Conmutado = NO
+	DVB = DVB-T
+	Conmutación Prioridad Entrada A = ON
+	Tiempo Espera Conmutación ASI = 60 s
+	Arranque Progresivo = OFF
+	Entrada A = ASI 1
+	Entrada B = ASI 2
+	Modulación:
+		Modo jerárquico = Ninguno
+		Intervalo guarda = 1/4
+		Code rate HP = 2/3
+		Code rate LP = 1/2
+		Modo IFFT = 8k
+		Constelación = 64QAM
+		Ancho banda = 8 MHz
+	Frecuencia FI = 36150000 Hz
+	Atenuación Nivel FI = 0,0 dB
+	Red = SFN
+	Control modo Tx por TS = ON
+	Dirección SFN = 0
+	Referencia 10MHz = Externa
+	Disparo 1PPS = Subida
+	Polaridad Espectro = Invertida
+	Precorrector no lineal = OFF
+	Precorrector lineal = OFF
+	Tipo precorrección no lineal = Módulo
+	Nivel recorte = 12,000 dB
+	Deriva Máxima PPS = 100 x 100 ns
+	Tiempo Holdover = 1 h
+	Celda habilitada = NO
+	Celda Identificador = 0
+	Forzar FEC = NO
+Rearme = OFF
+Rearme Alarmas = OFF
+Orden Arranque = ON
+Modo Test = OFF
+Retardo Local SFN = 0 x 100 ns
+Retardo SFN MIP = 0 x 100 ns
+Retardo Máximo MIP = 7500000 x 100 ns
+Margen Retardo = 3539813 x 100 ns
+Entrada ASI 1 = PRESENTE
+Entrada ASI 2 = AUSENTE
+Entradas Activas = Entrada Activa ASI 1
+Estado Stream = Correcto | FEC habilitado = NO
+Errores Referencia = Ninguno
+Temperatura = 34 ºC
+Sobretemperatura = NO
+Offset FI MIP = 0
+Primera portadora eliminada = 0
+Última portadora eliminada = 0
+Resumen Estado = OK
+_______________________________________________
+Equipo = Transmisión
+Código HW = MTD050C10
+Código SW = MTD05022
+Número de Serie = 2009414/361
+Archivos de Versiones:
+	Mod. MTD050C10	126932 B	10/06/09 10:16:42
+	Boot MTD050P01	46492 B	11/02/07 20:11:16
+Archivos de Configuración:
+Archivos Transferidos:
+Configuración Ficha Extendida:
+	Unidad Temperatura = ºC
+	Activación Aviso Fallo Temperatura = 50 ºC
+	Cese Aviso Fallo Temperatura = 45 ºC
+	Activación Alarma Fallo Temperatura = 65 ºC
+	Cese Alarma Fallo Temperatura = 60 ºC
+	Doble TX Conmutado = NO
+	Nombre = CH 22
+	Potencia Nominal = 4 W
+	Canal = 22
+	Offset Frecuencia = 0
+	Tipo = Transmisor
+	Banda = UHF
+	Umbral CAG Demodulador = 204
+	Modulación:
+		Modo jerárquico = Ninguno
+		Intervalo guarda = 1/4
+		Code rate HP = 2/3
+		Code rate LP = 1/2
+		Modo IFFT = 8k
+		Constelación = 64QAM
+	Identificador de Celda = 0
+Rearme = OFF
+Rearme Alarmas = OFF
+Arranque Remoto = ON
+Orden Arranque HW = ON
+Entrada FI = PRESENTE
+PLL = ENGANCHADO
+Estado Arranque = ON
+Squelch = OFF
+Control CG = AUTO
+Control DC CG = AUTO
+Salida Test = OFF
+PD = 4,00  W
+PR/PD = 1 %
+Nivel FI Entrada = 0,9 dBm
+Temperatura = 37 ºC
+VBER = 0,0E+00
+CBER = 4,4E-05
+MER = +INF
+Tensión Control PLL = 4,41 V
+Nivel Entrada Amplificador = 0,8 dB
+Tensión Control Amplificador = 2,02 V
+Tensión Control Down Converter = 2,32 V
+Vd = 4,47 V
+VPain = 4,28 V
+Ajuste Potencia AUTO = 341
+Ajuste Potencia MAN = 481
+Ajuste Down Converter AUTO = 308
+Ajuste Down Converter MAN = 450
+Ajuste BIAS I = 448
+Ajuste BIAS Q = 526
+Ajuste Atenuador PD = 18
+Ajuste Atenuador PR = 18
+Ajuste Atenuador Entrada Amplificador = 16
+Sobretemperatura = NO
+Modo Degradado = 0%
+Demodulador = ENGANCHADO
+Resumen Estado = OK
+_______________________________________________
+Equipo = Modulador
+Código HW = MDD050C10
+Código SW = MDD05028
+Número de Serie = 2010026/478
+Archivos de Versiones:
+	Mod. MDD050C10	128292 B	22/06/10 15:51:19
+	Boot MDD050P01	50096 B	05/11/07 15:11:23
+Archivos de Configuración:
+Archivos Transferidos:
+Configuración Ficha Extendida:
+	Versión HW = 2
+	Versión SW = 14
+	Unidad Temperatura = ºC
+	Activación Aviso Fallo Temperatura = 65 ºC
+	Cese Aviso Fallo Temperatura = 60 ºC
+	Activación Alarma Fallo Temperatura = 75 ºC
+	Cese Alarma Fallo Temperatura = 70 ºC
+	Doble TX Conmutado = NO
+	DVB = DVB-T
+	Conmutación Prioridad Entrada A = ON
+	Tiempo Espera Conmutación ASI = 60 s
+	Arranque Progresivo = OFF
+	Entrada A = ASI 2
+	Entrada B = ASI 1
+	Modulación:
+		Modo jerárquico = Ninguno
+		Intervalo guarda = 1/4
+		Code rate HP = 2/3
+		Code rate LP = 1/2
+		Modo IFFT = 8k
+		Constelación = 64QAM
+		Ancho banda = 8 MHz
+	Frecuencia FI = 36150000 Hz
+	Atenuación Nivel FI = 0,0 dB
+	Red = SFN
+	Control modo Tx por TS = ON
+	Dirección SFN = 0
+	Referencia 10MHz = Externa
+	Disparo 1PPS = Subida
+	Polaridad Espectro = Invertida
+	Precorrector no lineal = OFF
+	Precorrector lineal = OFF
+	Tipo precorrección no lineal = Módulo^2
+	Nivel recorte = 12,000 dB
+	Deriva Máxima PPS = 100 x 100 ns
+	Tiempo Holdover = 1 h
+	Celda habilitada = NO
+	Celda Identificador = 0
+	Forzar FEC = NO
+Rearme = OFF
+Rearme Alarmas = OFF
+Orden Arranque = ON
+Modo Test = OFF
+Retardo Local SFN = 0 x 100 ns
+Retardo SFN MIP = 0 x 100 ns
+Retardo Máximo MIP = 7000000 x 100 ns
+Margen Retardo = 2306104 x 100 ns
+Entrada ASI 1 = PRESENTE
+Entrada ASI 2 = AUSENTE
+Entradas Activas = Entrada Activa ASI 1
+Estado Stream = Correcto | FEC habilitado = NO
+Errores Referencia = Ninguno
+Temperatura = 38 ºC
+Sobretemperatura = NO
+Offset FI MIP = 0
+Primera portadora eliminada = 0
+Última portadora eliminada = 0
+Resumen Estado = OK
+_______________________________________________
+Equipo = Transmisión
+Código HW = MTD050C10
+Código SW = MTD05022
+Número de Serie = 2009414/357
+Archivos de Versiones:
+	Mod. MTD050C10	126932 B	10/06/09 10:16:42
+	Boot MTD050P01	46492 B	11/02/07 20:11:16
+Archivos de Configuración:
+Archivos Transferidos:
+Configuración Ficha Extendida:
+	Unidad Temperatura = ºC
+	Activación Aviso Fallo Temperatura = 50 ºC
+	Cese Aviso Fallo Temperatura = 45 ºC
+	Activación Alarma Fallo Temperatura = 65 ºC
+	Cese Alarma Fallo Temperatura = 60 ºC
+	Doble TX Conmutado = NO
+	Nombre = CH 60
+	Potencia Nominal = 4 W
+	Canal = 60
+	Offset Frecuencia = 0
+	Tipo = Transmisor
+	Banda = UHF
+	Umbral CAG Demodulador = 204
+	Modulación:
+		Modo jerárquico = Ninguno
+		Intervalo guarda = 1/4
+		Code rate HP = 2/3
+		Code rate LP = 1/2
+		Modo IFFT = 8k
+		Constelación = 64QAM
+	Identificador de Celda = 0
+Rearme = OFF
+Rearme Alarmas = OFF
+Arranque Remoto = ON
+Orden Arranque HW = ON
+Entrada FI = PRESENTE
+PLL = ENGANCHADO
+Estado Arranque = ON
+Squelch = OFF
+Control CG = AUTO
+Control DC CG = AUTO
+Salida Test = OFF
+PD = 4,12  W
+PR/PD = 3 %
+Nivel FI Entrada = 0,7 dBm
+Temperatura = 35 ºC
+VBER = 0,0E+00
+CBER = 5,2E-05
+MER = +INF
+Tensión Control PLL = 4,17 V
+Nivel Entrada Amplificador = -0,5 dB
+Tensión Control Amplificador = 2,10 V
+Tensión Control Down Converter = 2,58 V
+Vd = 4,55 V
+VPain = 3,70 V
+Ajuste Potencia AUTO = 352
+Ajuste Potencia MAN = 540
+Ajuste Down Converter AUTO = 308
+Ajuste Down Converter MAN = 493
+Ajuste BIAS I = 524
+Ajuste BIAS Q = 519
+Ajuste Atenuador PD = 17
+Ajuste Atenuador PR = 17
+Ajuste Atenuador Entrada Amplificador = 14
+Sobretemperatura = NO
+Modo Degradado = 0%
+Demodulador = ENGANCHADO
+Resumen Estado = OK
+_______________________________________________
+Equipo = FORCAL II
+Código HW = CPD050L01
+Código SW = CPD50L22
+Número de Serie = T90720D1832
+Archivos de Versiones:
+	ControladorTDT	242988 B	21/07/09 09:52:08
+	Boot CPD050	56252 B	26/02/09 13:17:55
+Archivos de Configuración:
+	mod1.cfg	200 B	25/05/16 21:32:12
+	mod2.cfg	244 B	10/11/15 12:42:09
+	mod3.cfg	200 B	23/07/15 17:41:10
+	mod6.cfg	244 B	10/02/15 19:50:59
+	mod4.cfg	244 B	10/02/15 19:50:51
+	mod5.cfg	200 B	15/05/13 13:20:27
+Archivos Transferidos:
+	trisk.ini	4294967295 B	01/01/70 00:59:59
+Configuración Ficha Extendida:
+	Nombre = FORCAL II
+	Idioma = Español
+	Entidad = Controlador 2
+	Canal A = Transmisor
+	Canal B = Transmisor
+	Canal C = Transmisor
+	Unidad Temperatura = ºC
+	Activación Aviso Fallo Temperatura = 55 ºC
+	Cese Aviso Fallo Temperatura = 50 ºC
+	Activación Alarma Fallo Temperatura = 60 ºC
+	Cese Alarma Fallo Temperatura = 56 ºC
+	Activación Aviso  Fallo Ventiladores = 2000 rpm
+	Cese Aviso  Fallo Ventiladores = 2500 rpm
+	Activación Avería Fallo Ventiladores = 1000 rpm
+	Cese Avería Fallo Ventiladores = 1500 rpm
+Rearme = OFF
+Rearme Alarmas = OFF
+Fallo Fuente 1 = NO
+Fallo Fuente 2 = NO
+12 VIN = NO
+12 VUPS = SI
+Avería Ventiladores = NO
+Aviso Ventiladores = NO
+Resumen Estado = OK
+Resumen Estado Canal A = OK
+Resumen Estado Canal B = OK
+Resumen Estado Canal C = OK
+Sobretemperatura = NO
+Velocidad Ventilador 1 = 5370 rpm
+Velocidad Ventilador 2 = 5235 rpm
+Velocidad Ventilador 3 = 5250 rpm
+Velocidad Ventilador 4 = 5220 rpm
+Velocidad Ventilador 5 = 5280 rpm
+Modo Operación = AUTO
+Modo Control = REMOTO
+Modo Repuesto = NO
+Arranque Ventiladores = ON
+Estado Ventiladores = ON
+Temperatura = 28 ºC
+Alarma Externa 1 = NO
+Alarma Externa 2 = NO
+Horario = 24/06/16 08:26:41
+_______________________________________________
+Equipo = Modulador
+Código HW = MDD050C10
+Código SW = MDD05028
+Número de Serie = 2009.365/03
+Archivos de Versiones:
+	Mod. MDD050C10	128292 B	22/06/10 15:51:19
+	Boot MDD050P01	50096 B	05/11/07 15:11:23
+Archivos de Configuración:
+Archivos Transferidos:
+Configuración Ficha Extendida:
+	Versión HW = 2
+	Versión SW = 14
+	Unidad Temperatura = ºC
+	Activación Aviso Fallo Temperatura = 65 ºC
+	Cese Aviso Fallo Temperatura = 60 ºC
+	Activación Alarma Fallo Temperatura = 75 ºC
+	Cese Alarma Fallo Temperatura = 70 ºC
+	Doble TX Conmutado = NO
+	DVB = DVB-T
+	Conmutación Prioridad Entrada A = ON
+	Tiempo Espera Conmutación ASI = 60 s
+	Arranque Progresivo = OFF
+	Entrada A = ASI 2
+	Entrada B = ASI 1
+	Modulación:
+		Modo jerárquico = Ninguno
+		Intervalo guarda = 1/4
+		Code rate HP = 2/3
+		Code rate LP = 1/2
+		Modo IFFT = 8k
+		Constelación = 64QAM
+		Ancho banda = 8 MHz
+	Frecuencia FI = 36150000 Hz
+	Atenuación Nivel FI = 0,0 dB
+	Red = SFN
+	Control modo Tx por TS = ON
+	Dirección SFN = 0
+	Referencia 10MHz = Externa
+	Disparo 1PPS = Subida
+	Polaridad Espectro = Invertida
+	Precorrector no lineal = OFF
+	Precorrector lineal = OFF
+	Tipo precorrección no lineal = Módulo
+	Nivel recorte = 12,000 dB
+	Deriva Máxima PPS = 100 x 100 ns
+	Tiempo Holdover = 1 h
+	Celda habilitada = NO
+	Celda Identificador = 0
+	Forzar FEC = NO
+Rearme = OFF
+Rearme Alarmas = OFF
+Orden Arranque = ON
+Modo Test = OFF
+Retardo Local SFN = 0 x 100 ns
+Retardo SFN MIP = 0 x 100 ns
+Retardo Máximo MIP = 7500000 x 100 ns
+Margen Retardo = 4736886 x 100 ns
+Entrada ASI 1 = PRESENTE
+Entrada ASI 2 = AUSENTE
+Entradas Activas = Entrada Activa ASI 1
+Estado Stream = Correcto | FEC habilitado = NO
+Errores Referencia = Ninguno
+Temperatura = 36 ºC
+Sobretemperatura = NO
+Offset FI MIP = 0
+Primera portadora eliminada = 0
+Última portadora eliminada = 0
+Resumen Estado = OK
+_______________________________________________
+Equipo = Transmisión
+Código HW = MTD050C10
+Código SW = MTD05022
+Número de Serie = 2009414/363
+Archivos de Versiones:
+	Mod. MTD050C10	126932 B	10/06/09 10:16:42
+	Boot MTD050P01	46492 B	11/02/07 20:11:16
+Archivos de Configuración:
+Archivos Transferidos:
+Configuración Ficha Extendida:
+	Unidad Temperatura = ºC
+	Activación Aviso Fallo Temperatura = 50 ºC
+	Cese Aviso Fallo Temperatura = 45 ºC
+	Activación Alarma Fallo Temperatura = 65 ºC
+	Cese Alarma Fallo Temperatura = 60 ºC
+	Doble TX Conmutado = NO
+	Nombre = CH 40   
+	Potencia Nominal = 4 W
+	Canal = 40
+	Offset Frecuencia = 0
+	Tipo = Transmisor
+	Banda = UHF
+	Umbral CAG Demodulador = 204
+	Modulación:
+		Modo jerárquico = Ninguno
+		Intervalo guarda = 1/4
+		Code rate HP = 2/3
+		Code rate LP = 1/2
+		Modo IFFT = 8k
+		Constelación = 64QAM
+	Identificador de Celda = 0
+Rearme = OFF
+Rearme Alarmas = OFF
+Arranque Remoto = ON
+Orden Arranque HW = ON
+Entrada FI = PRESENTE
+PLL = ENGANCHADO
+Estado Arranque = ON
+Squelch = OFF
+Control CG = AUTO
+Control DC CG = AUTO
+Salida Test = OFF
+PD = 4,06  W
+PR/PD = 0 %
+Nivel FI Entrada = 0,7 dBm
+Temperatura = 33 ºC
+VBER = 0,0E+00
+CBER = 6,6E-05
+MER = +INF
+Tensión Control PLL = 4,27 V
+Nivel Entrada Amplificador = 0,8 dB
+Tensión Control Amplificador = 1,97 V
+Tensión Control Down Converter = 2,61 V
+Vd = 4,51 V
+VPain = 4,28 V
+Ajuste Potencia AUTO = 346
+Ajuste Potencia MAN = 473
+Ajuste Down Converter AUTO = 308
+Ajuste Down Converter MAN = 485
+Ajuste BIAS I = 442
+Ajuste BIAS Q = 493
+Ajuste Atenuador PD = 17
+Ajuste Atenuador PR = 17
+Ajuste Atenuador Entrada Amplificador = 12
+Sobretemperatura = NO
+Modo Degradado = 0%
+Demodulador = ENGANCHADO
+Resumen Estado = OK
+_______________________________________________
+Equipo = Modulador
+Código HW = MDD050C10
+Código SW = MDD05028
+Número de Serie = 2010216/374
+Archivos de Versiones:
+	Mod. MDD050C10	128292 B	22/06/10 15:51:19
+	Boot MDD050P01	50096 B	05/11/07 15:11:23
+Archivos de Configuración:
+Archivos Transferidos:
+Configuración Ficha Extendida:
+	Versión HW = 2
+	Versión SW = 14
+	Unidad Temperatura = ºC
+	Activación Aviso Fallo Temperatura = 65 ºC
+	Cese Aviso Fallo Temperatura = 60 ºC
+	Activación Alarma Fallo Temperatura = 75 ºC
+	Cese Alarma Fallo Temperatura = 70 ºC
+	Doble TX Conmutado = NO
+	DVB = DVB-T
+	Conmutación Prioridad Entrada A = ON
+	Tiempo Espera Conmutación ASI = 60 s
+	Arranque Progresivo = OFF
+	Entrada A = ASI 1
+	Entrada B = ASI 2
+	Modulación:
+		Modo jerárquico = Ninguno
+		Intervalo guarda = 1/4
+		Code rate HP = 2/3
+		Code rate LP = 1/2
+		Modo IFFT = 8k
+		Constelación = 64QAM
+		Ancho banda = 8 MHz
+	Frecuencia FI = 36150000 Hz
+	Atenuación Nivel FI = 0,0 dB
+	Red = SFN
+	Control modo Tx por TS = ON
+	Dirección SFN = 0
+	Referencia 10MHz = Externa
+	Disparo 1PPS = Subida
+	Polaridad Espectro = Invertida
+	Precorrector no lineal = OFF
+	Precorrector lineal = OFF
+	Tipo precorrección no lineal = Módulo^2
+	Nivel recorte = 12,000 dB
+	Deriva Máxima PPS = 100 x 100 ns
+	Tiempo Holdover = 1 h
+	Celda habilitada = NO
+	Celda Identificador = 0
+	Forzar FEC = NO
+Rearme = OFF
+Rearme Alarmas = OFF
+Orden Arranque = ON
+Modo Test = OFF
+Retardo Local SFN = 0 x 100 ns
+Retardo SFN MIP = 0 x 100 ns
+Retardo Máximo MIP = 7500000 x 100 ns
+Margen Retardo = 4736842 x 100 ns
+Entrada ASI 1 = PRESENTE
+Entrada ASI 2 = AUSENTE
+Entradas Activas = Entrada Activa ASI 1
+Estado Stream = Correcto | FEC habilitado = NO
+Errores Referencia = Ninguno
+Temperatura = 34 ºC
+Sobretemperatura = NO
+Offset FI MIP = 0
+Primera portadora eliminada = 0
+Última portadora eliminada = 0
+Resumen Estado = OK
+_______________________________________________
+Equipo = Transmisión
+Código HW = MTD050C10
+Código SW = MTD05022
+Número de Serie = 2009.89/30
+Archivos de Versiones:
+	Mod. MTD050C10	126932 B	10/06/09 10:16:42
+	Boot MTD050P01	46492 B	11/02/07 20:11:16
+Archivos de Configuración:
+Archivos Transferidos:
+Configuración Ficha Extendida:
+	Unidad Temperatura = ºC
+	Activación Aviso Fallo Temperatura = 50 ºC
+	Cese Aviso Fallo Temperatura = 45 ºC
+	Activación Alarma Fallo Temperatura = 65 ºC
+	Cese Alarma Fallo Temperatura = 60 ºC
+	Doble TX Conmutado = NO
+	Nombre = CH 46
+	Potencia Nominal = 4 W
+	Canal = 46
+	Offset Frecuencia = 0
+	Tipo = Transmisor
+	Banda = UHF
+	Umbral CAG Demodulador = 204
+	Modulación:
+		Modo jerárquico = Ninguno
+		Intervalo guarda = 1/4
+		Code rate HP = 2/3
+		Code rate LP = 1/2
+		Modo IFFT = 8k
+		Constelación = 64QAM
+	Identificador de Celda = 0
+Rearme = OFF
+Rearme Alarmas = OFF
+Arranque Remoto = ON
+Orden Arranque HW = ON
+Entrada FI = PRESENTE
+PLL = ENGANCHADO
+Estado Arranque = ON
+Squelch = OFF
+Control CG = AUTO
+Control DC CG = AUTO
+Salida Test = OFF
+PD = 4,18  W
+PR/PD = 1 %
+Nivel FI Entrada = 0,5 dBm
+Temperatura = 33 ºC
+VBER = 0,0E+00
+CBER = 6,0E-05
+MER = +INF
+Tensión Control PLL = 4,22 V
+Nivel Entrada Amplificador = -0,6 dB
+Tensión Control Amplificador = 1,98 V
+Tensión Control Down Converter = 2,50 V
+Vd = 4,59 V
+VPain = 3,62 V
+Ajuste Potencia AUTO = 350
+Ajuste Potencia MAN = 502
+Ajuste Down Converter AUTO = 308
+Ajuste Down Converter MAN = 488
+Ajuste BIAS I = 533
+Ajuste BIAS Q = 507
+Ajuste Atenuador PD = 17
+Ajuste Atenuador PR = 17
+Ajuste Atenuador Entrada Amplificador = 14
+Sobretemperatura = NO
+Modo Degradado = 0%
+Demodulador = ENGANCHADO
+Resumen Estado = OK
+_______________________________________________
+Equipo = Modulador
+Código HW = MDD050C10
+Código SW = MDD05028
+Número de Serie = 2009.365/19
+Archivos de Versiones:
+	Mod. MDD050C10	128292 B	22/06/10 15:51:19
+	Boot MDD050P01	50096 B	05/11/07 15:11:23
+Archivos de Configuración:
+Archivos Transferidos:
+Configuración Ficha Extendida:
+	Versión HW = 2
+	Versión SW = 14
+	Unidad Temperatura = ºC
+	Activación Aviso Fallo Temperatura = 65 ºC
+	Cese Aviso Fallo Temperatura = 60 ºC
+	Activación Alarma Fallo Temperatura = 75 ºC
+	Cese Alarma Fallo Temperatura = 70 ºC
+	Doble TX Conmutado = NO
+	DVB = DVB-T
+	Conmutación Prioridad Entrada A = ON
+	Tiempo Espera Conmutación ASI = 60 s
+	Arranque Progresivo = OFF
+	Entrada A = ASI 1
+	Entrada B = ASI 2
+	Modulación:
+		Modo jerárquico = Ninguno
+		Intervalo guarda = 1/4
+		Code rate HP = 2/3
+		Code rate LP = 1/2
+		Modo IFFT = 8k
+		Constelación = 64QAM
+		Ancho banda = 8 MHz
+	Frecuencia FI = 36150000 Hz
+	Atenuación Nivel FI = 0,0 dB
+	Red = SFN
+	Control modo Tx por TS = ON
+	Dirección SFN = 0
+	Referencia 10MHz = Externa
+	Disparo 1PPS = Subida
+	Polaridad Espectro = Invertida
+	Precorrector no lineal = OFF
+	Precorrector lineal = OFF
+	Tipo precorrección no lineal = Módulo
+	Nivel recorte = 12,000 dB
+	Deriva Máxima PPS = 100 x 100 ns
+	Tiempo Holdover = 1 h
+	Celda habilitada = NO
+	Celda Identificador = 0
+	Forzar FEC = NO
+Rearme = OFF
+Rearme Alarmas = OFF
+Orden Arranque = ON
+Modo Test = OFF
+Retardo Local SFN = 0 x 100 ns
+Retardo SFN MIP = 0 x 100 ns
+Retardo Máximo MIP = 7500000 x 100 ns
+Margen Retardo = 4736882 x 100 ns
+Entrada ASI 1 = PRESENTE
+Entrada ASI 2 = AUSENTE
+Entradas Activas = Entrada Activa ASI 1
+Estado Stream = Correcto | FEC habilitado = NO
+Errores Referencia = Ninguno
+Temperatura = 39 ºC
+Sobretemperatura = NO
+Offset FI MIP = 0
+Primera portadora eliminada = 0
+Última portadora eliminada = 0
+Resumen Estado = OK
+_______________________________________________
+Equipo = Transmisión
+Código HW = MTD050C10
+Código SW = MTD05022
+Número de Serie = 2009414/372
+Archivos de Versiones:
+	Mod. MTD050C10	126932 B	10/06/09 10:16:42
+	Boot MTD050P01	46492 B	11/02/07 20:11:16
+Archivos de Configuración:
+Archivos Transferidos:
+Configuración Ficha Extendida:
+	Unidad Temperatura = ºC
+	Activación Aviso Fallo Temperatura = 50 ºC
+	Cese Aviso Fallo Temperatura = 45 ºC
+	Activación Alarma Fallo Temperatura = 65 ºC
+	Cese Alarma Fallo Temperatura = 60 ºC
+	Doble TX Conmutado = NO
+	Nombre = CH 49
+	Potencia Nominal = 4 W
+	Canal = 49
+	Offset Frecuencia = 0
+	Tipo = Transmisor
+	Banda = UHF
+	Umbral CAG Demodulador = 204
+	Modulación:
+		Modo jerárquico = Ninguno
+		Intervalo guarda = 1/4
+		Code rate HP = 2/3
+		Code rate LP = 1/2
+		Modo IFFT = 8k
+		Constelación = 64QAM
+	Identificador de Celda = 0
+Rearme = OFF
+Rearme Alarmas = OFF
+Arranque Remoto = ON
+Orden Arranque HW = ON
+Entrada FI = PRESENTE
+PLL = ENGANCHADO
+Estado Arranque = ON
+Squelch = OFF
+Control CG = AUTO
+Control DC CG = AUTO
+Salida Test = OFF
+PD = 4,18  W
+PR/PD = 1 %
+Nivel FI Entrada = 0,9 dBm
+Temperatura = 35 ºC
+VBER = 0,0E+00
+CBER = 5,2E-05
+MER = +INF
+Tensión Control PLL = 4,36 V
+Nivel Entrada Amplificador = -0,7 dB
+Tensión Control Amplificador = 2,01 V
+Tensión Control Down Converter = 2,69 V
+Vd = 4,59 V
+VPain = 3,58 V
+Ajuste Potencia AUTO = 350
+Ajuste Potencia MAN = 513
+Ajuste Down Converter AUTO = 308
+Ajuste Down Converter MAN = 489
+Ajuste BIAS I = 464
+Ajuste BIAS Q = 532
+Ajuste Atenuador PD = 17
+Ajuste Atenuador PR = 17
+Ajuste Atenuador Entrada Amplificador = 15
+Sobretemperatura = NO
+Modo Degradado = 0%
+Demodulador = ENGANCHADO
+Resumen Estado = OK
+_______________________________________________
