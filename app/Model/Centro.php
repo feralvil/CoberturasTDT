@@ -6,7 +6,7 @@
  * @author alfonso_fer
  */
 class Centro extends AppModel {
-    public $hasMany = array('Cobertura', 'Emision', 'Sim', 'Equipo');
+    public $hasMany = array('Cobertura', 'Emision', 'Sim', 'Equipo', 'Contacto');
     public $validate = array(
         'centro' => array(
             'required' => array(

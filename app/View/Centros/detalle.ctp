@@ -16,6 +16,7 @@ $this->Js->event('click', $functab);
         <li class="tabs-tab"><a id="info" href="#"><i class = "icon-info"></i> <?php echo __('Información');?></a></li>
         <li class="tabs-tab"><a id="sims" href="#"><i class = "icon-dashboard"></i> <?php echo __('Supervisión');?></a></li>
         <li class="tabs-tab"><a id="equipos" href="#"><i class = "icon-cogs"></i> <?php echo __('Equipos');?></a></li>
+        <li class="tabs-tab"><a id="contactos" href="#"><i class = "icon-user"></i> <?php echo __('Contactos');?></a></li>
     </ul>
 
     <div id="multiples" class="tabs-content">
@@ -646,8 +647,54 @@ $this->Js->event('click', $functab);
             ?>
         </div>
     </div>
-
-
-
+    </div>
+    <div id="contactos" class="tabs-content hide-all">
+        <h2><?php echo __('Contactos del Centro');?></h2>
+        <?php
+        $ncontactos = count($centro['Contacto']);
+        if ($ncontactos > 0){
+        ?>
+            <table class="ink-table bordered alternating hover">
+                <tr>
+                    <th><?php echo __('Nombre'); ?></th>
+                    <th><?php echo __('Cargo'); ?></th>
+                    <th><?php echo __('Teléfono'); ?></th>
+                    <th><?php echo __('Mail'); ?></th>
+                </tr>
+                <?php
+                foreach ($centro['Contacto'] as $contacto) {
+                ?>
+                    <tr>
+                        <td><?php echo $contacto['nombre']; ?></td>
+                        <td><?php echo $contacto['cargo']; ?></td>
+                        <td><?php echo $contacto['telefono']; ?></td>
+                        <td><?php echo $contacto['mail']; ?></td>
+                    </tr>
+                <?php
+                }
+                ?>
+            </table>
+        <?php
+        }
+        else{
+        ?>
+            <div class="ink-alert block warning">
+                <h4><?php echo __('No hay resultados');?></h4>
+                <p><?php echo __('No se han encontrado contactos en este centro'); ?></p>
+            </div>
+        <?php
+        }
+        ?>
+        <div class='content-center'>
+            <?php
+            if ((AuthComponent::user('role') == 'admin') || (AuthComponent::user('role') == 'colab')) {
+                echo $this->Html->Link(
+                    '<i class = "icon-edit"></i> '.__('Editar Contactos'),
+                    array('controller' => 'contactos', 'action' => 'centro', $centro['Centro']['id']),
+                    array('class' => 'ink-button blue', 'title' => __('Modificar contactos'), 'alt' => __('Modificar contactos'), 'escape' => false)
+                );
+            }
+            ?>
+        </div>
     </div>
 </div>
