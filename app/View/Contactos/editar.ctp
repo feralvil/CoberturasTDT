@@ -1,4 +1,4 @@
-<h1><?php echo __('Agregar Contacto al Centro TDT de ').$this->request->data['Centro']['centro'];?></h1>
+<h1><?php echo __('Modificar Contacto del Centro TDT de ').$this->request->data['Centro']['centro'];?></h1>
 <?php
 echo $this->Form->create('Contacto',array(
     'inputDefaults' => array(

@@ -208,5 +208,10 @@ else{
         array('controller' => 'equipos', 'action' => 'importarhw', $centro['Centro']['id']),
         array('class' => 'ink-button blue', 'title' => __('Editar Tarjeta'), 'alt' => __('Editar Equipos'), 'escape' => false)
     );
+    echo $this->Html->Link(
+        '<i class = "icon-plus"></i> ' .  __('Agregar Equipo'),
+        array('controller' => 'equipos', 'action' => 'agregar', $centro['Centro']['id']),
+        array('class' => 'ink-button blue', 'title' => __('Agregar Equipo'), 'alt' => __('Agregar Equipo'), 'escape' => false)
+    );
     ?>
 </div>

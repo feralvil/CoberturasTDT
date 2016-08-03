@@ -21,7 +21,8 @@ class CentrosController extends AppController {
                 $accPerm = array(
                     'index', 'detalle', 'editar', 'agregar', 'cobertura', 'tipologia', 'updateTipo', 'emisiones',
                     'impemisiones', 'multiples', 'impkml', 'leerkml', 'mapacentro', 'xlscentros', 'xlsdescargar',
-                    'apagar', 'mapadet', 'xlsanexo', 'supervision', 'importarhw', 'leerhw', 'propietarios', 'equipos'
+                    'apagar', 'mapadet', 'xlsanexo', 'supervision', 'importarhw', 'leerhw', 'propietarios', 'equipos',
+                    'incidencias'
                 );
             }
             elseif ($rol == 'consum') {
@@ -834,6 +835,73 @@ class CentrosController extends AppController {
         }
         else{
             $this->Session->setFlash(__('Error: No se ha encontrado el fichero de datos de Propiedad de los Centros'), 'default', array('class' => 'ink-alert basic error'));
+            $this->redirect(array('controller' => 'centros', 'action' => 'index'));
+        }
+    }
+
+    public function incidencias($id = null){
+        // Buscamos el centro:
+        $this->Centro->id = $id;
+        if (!$this->Centro->exists()) {
+            throw new NotFoundException(__('Error: el centro seleccionado no existe'));
+        }
+        $this->Centro->recursive = -1;
+        $centro = $this->Centro->read(null, $id);
+
+        // Buscamos el fichero de datos:
+        App::uses('Folder', 'Utility');
+        App::uses('File', 'Utility');
+        // Comrpobamos si existe
+        $ruta = 'files' . DS . 'Centros_Incidencias.ods';
+        $fichero = new File($ruta, false);
+        if ($fichero->exists()){
+            // Cargamos la clase para leer el fichero Excel:
+            App::import('Vendor', 'Classes/PHPExcel');
+            // Intentamos cargar el fichero
+            try{
+                $tipoFich = PHPExcel_IOFactory::identify($ruta);
+                $objReader = PHPExcel_IOFactory::createReader($tipoFich);
+                // Sólo nos interesa cargar los datos:
+                $objReader->setReadDataOnly(true);
+                $objPHPExcel = $objReader->load($ruta);
+            }
+            catch(Exception $e){
+                die("Error al cargar el fichero de datos: ".$e->getMessage());
+            }
+            // Nos vamos a la hoja de Catastro
+            // Fijamos como hoja activa la primera (sólo se importa una)
+            $objPHPExcel->setActiveSheetIndex(0);
+            // Obtenemos el número de filas de la hoja:
+            $maxfila = $objPHPExcel->getActiveSheet()->getHighestRow() + 1;
+            $fila = 2;
+            $centrosinc = array();
+            while ($fila < $maxfila){
+                $idcentro = $objPHPExcel->getActiveSheet()->getCell("A" . $fila)->getValue();
+                $nomcentro = $objPHPExcel->getActiveSheet()->getCell("B" . $fila)->getValue();
+                $centrosinc[$idcentro] = $nomcentro;
+                $fila++;
+            }
+            if ($this->request->is('post') || $this->request->is('put')) {
+                if ($this->Centro->save($this->request->data)){
+                    $this->Session->setFlash(__('Datos de Incidencias actualizado correctamente') , 'default', array('class' => 'ink-alert basic success'));
+                    $this->redirect(array('controller' => 'centros', 'action' => 'incidencias', $id));
+                }
+                else{
+                    $this->Session->setFlash(__('Error al guardar datos de Propiedad del Centro') . ' ' . $centro['Centro']['centro'], 'default', array('class' => 'ink-alert basic error'));
+                    $this->redirect(array('controller' => 'centros', 'action' => 'incidencias', $id));
+                }
+            }
+            else{
+                $this->set('title_for_layout', __('Importar datos de incidencias de Centro TDT'));
+                $this->set('centro', $centro);
+                $this->set('centrosinc', $centrosinc);
+                $vecinos = $this->Centro->find('neighbors', array('field' => 'id', 'value' => $id));
+                $this->set('vecinos', $vecinos);
+                $this->request->data = $centro;
+            }
+        }
+        else{
+            $this->Session->setFlash(__('Error: No se ha encontrado el fichero de datos de Incidencias de los Centros'), 'default', array('class' => 'ink-alert basic error'));
             $this->redirect(array('controller' => 'centros', 'action' => 'index'));
         }
     }

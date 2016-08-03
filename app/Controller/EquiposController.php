@@ -8,7 +8,7 @@ class EquiposController extends AppController {
             $accPerm = array();
             if ($rol == 'colab') {
                 $accPerm = array(
-                    'index', 'detalle', 'centro', 'importarhw', 'leerhw', 'editar'
+                    'index', 'detalle', 'centro', 'importarhw', 'leerhw', 'editar', 'agregar'
                 );
             }
             elseif ($rol == 'consum') {
@@ -196,6 +196,10 @@ class EquiposController extends AppController {
             }
             fclose($fichero);
             $hwcentro = array();
+            $tipotarjeta = array(
+                'TX' => 'Transmisión', 'MOD' => 'Modulador', 'RX' => 'Recepción',
+                'EXC' => 'Excitador', 'CONV' => 'Convertidor', 'FI' => 'FI Transmisión Digital'
+            );
             foreach ($equipos as $indice => $equipo) {
                 if ($indice == 0){
                     $nomequipo = $equipo['EQUIPO'];
@@ -210,10 +214,6 @@ class EquiposController extends AppController {
                 }
                 else{
                     $nomequipo = $equipo['EQUIPO'];
-                    $tipotarjeta = array(
-                        'TX' => 'Transmisión', 'MOD' => 'Modulador', 'RX' => 'Recepción',
-                        'EXC' => 'Excitador', 'CONV' => 'Convertidor', 'FI' => 'FI Transmisión Digital'
-                    );
                     if (in_array($nomequipo, $tipotarjeta)){
                         $ntarjetas++;
                         $equipo['TIPO'] = 'TARJETA';
@@ -355,7 +355,7 @@ class EquiposController extends AppController {
             // Fijamos el título de la vista
             $this->set('title_for_layout', __('Leer inventario de Centro TDT'));
             $this->set('hwcentro', $hwcentro);
-            $this->set('equipos', $tarjcanal);
+            $this->set('equipos', $equipos);
         }
     }
 
@@ -380,6 +380,30 @@ class EquiposController extends AppController {
             // Fijamos el título de la vista
             $this->set('title_for_layout', __('Modificar Equipo TDT'));
             $this->request->data = $equipo;
+        }
+    }
+
+    public function agregar ($idcentro = null){
+        $this->Equipo->Centro->id = $idcentro;
+        if (!$this->Equipo->Centro->exists()) {
+            throw new NotFoundException(__('Error: el centro seleccionado no existe'));
+        }
+        $centro = $this->Equipo->Centro->read(null, $idcentro);
+        if ($this->request->is('post') || $this->request->is('put')) {
+            // Guardamos los datos:
+            if ($this->Equipo->save($this->request->data)) {
+                $this->Session->setFlash(__('Equipo modificado correctamente'), 'default', array('class' => 'ink-alert basic success'));
+                $this->redirect(array('controller' => 'equipos', 'action' => 'centro', $equipo['Equipo']['centro_id']));
+            }
+            else {
+                $this->Session->setFlash(__('Error al guardar el equipo'), 'default', array('class' => 'ink-alert basic error'));
+                $this->redirect(array('controller' => 'equipos', 'action' => 'centro', $equipo['Equipo']['centro_id']));
+            }
+        }
+        else{
+            // Fijamos el título de la vista
+            $this->set('title_for_layout', __('Agregar Equipo a Centro TDT'));
+            $this->set('centro', $centro);
         }
     }
 
