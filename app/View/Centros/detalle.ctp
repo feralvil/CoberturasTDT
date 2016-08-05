@@ -476,25 +476,38 @@ $this->Js->event('click', $functab);
         ?>
                 <div class="ink-grid">
                     <div class="large-100">
-                        <table class="ink-table bordered alternating hover">
-                            <tr>
+                        <?php
+                        if (isset($bastidor['nombre'])){
+                        ?>
+                            <table class="ink-table bordered alternating hover">
+                                <tr>
 
-                                <th><?php echo __('Supervisor'); ?></th>
-                                <th><?php echo __('Marca'); ?></th>
-                                <th><?php echo __('Código Hardware'); ?></th>
-                                <th><?php echo __('Código Software'); ?></th>
-                                <th><?php echo __('Número de Serie'); ?></th>
-                                <th><?php echo __('Fecha de importación'); ?></th>
-                            </tr>
-                            <tr>
-                                <td><?php echo $bastidor['nombre']; ?></td>
-                                <td><?php echo $bastidor['marca']; ?></td>
-                                <td><?php echo $bastidor['codhw']; ?></td>
-                                <td><?php echo $bastidor['codsw']; ?></td>
-                                <td><?php echo $bastidor['nserie']; ?></td>
-                                <td><?php echo $bastidor['fecha']; ?></td>
-                            </tr>
-                        </table>
+                                    <th><?php echo __('Supervisor'); ?></th>
+                                    <th><?php echo __('Marca'); ?></th>
+                                    <th><?php echo __('Código Hardware'); ?></th>
+                                    <th><?php echo __('Código Software'); ?></th>
+                                    <th><?php echo __('Número de Serie'); ?></th>
+                                    <th><?php echo __('Fecha de importación'); ?></th>
+                                </tr>
+                                <tr>
+                                    <td><?php echo $bastidor['nombre']; ?></td>
+                                    <td><?php echo $bastidor['marca']; ?></td>
+                                    <td><?php echo $bastidor['codhw']; ?></td>
+                                    <td><?php echo $bastidor['codsw']; ?></td>
+                                    <td><?php echo $bastidor['nserie']; ?></td>
+                                    <td><?php echo $bastidor['fecha']; ?></td>
+                                </tr>
+                            </table>
+                        <?php
+                        }
+                        else{
+                        ?>
+                            <div class="ink-alert basic" role="alert">
+                                <p><b><?php echo __('Atención'); ?>:</b> <?php echo __('Este Centro no tiene módulo de supervisión'); ?></p>
+                            </div>
+                        <?php
+                        }
+                        ?>
                     </div>
                     <div class="large-10">
                         &nbsp;

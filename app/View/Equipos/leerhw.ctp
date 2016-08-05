@@ -10,20 +10,33 @@ $tipotarjeta = array(
     <div class="column-group gutters">
         <div class="large-100">
             <h2><?php echo __('Supervisor') . ' ' . $hwcentro['RACK']['EQUIPO']; ?></h2>
-            <table class="ink-table bordered alternating hover">
-                <tr>
-                    <th><?php echo __('Código Hardware'); ?></th>
-                    <th><?php echo __('Código Software'); ?></th>
-                    <th><?php echo __('Número de Serie'); ?></th>
-                    <th><?php echo __('Fecha de Importación'); ?></th>
-                </tr>
-                <tr>
-                    <td><?php echo $hwcentro['RACK']['CODHW']; ?></td>
-                    <td><?php echo $hwcentro['RACK']['CODSW']; ?></td>
-                    <td><?php echo $hwcentro['RACK']['NSERIE']; ?></td>
-                    <td><?php echo $hwcentro['RACK']['FECHA']; ?></td>
-                </tr>
-            </table>
+            <?php
+            if (isset($hwcentro['RACK']['NOMBRE'])){
+            ?>
+                <table class="ink-table bordered alternating hover">
+                    <tr>
+                        <th><?php echo __('Código Hardware'); ?></th>
+                        <th><?php echo __('Código Software'); ?></th>
+                        <th><?php echo __('Número de Serie'); ?></th>
+                        <th><?php echo __('Fecha de Importación'); ?></th>
+                    </tr>
+                    <tr>
+                        <td><?php echo $hwcentro['RACK']['CODHW']; ?></td>
+                        <td><?php echo $hwcentro['RACK']['CODSW']; ?></td>
+                        <td><?php echo $hwcentro['RACK']['NSERIE']; ?></td>
+                        <td><?php echo $hwcentro['RACK']['FECHA']; ?></td>
+                    </tr>
+                </table>
+            <?php
+            }
+            else{
+            ?>
+                <div class="ink-alert basic" role="alert">
+                    <p><b><?php echo __('Atención'); ?>:</b> <?php echo __('Este Centro no tiene módulo de supervisión'); ?></p>
+                </div>
+            <?php
+            }
+            ?>
         </div>
         <div class="large-10">
             &nbsp;

@@ -200,12 +200,33 @@ class EquiposController extends AppController {
                 'TX' => 'Transmisión', 'MOD' => 'Modulador', 'RX' => 'Recepción',
                 'EXC' => 'Excitador', 'CONV' => 'Convertidor', 'FI' => 'FI Transmisión Digital'
             );
+            $supervisor = false;
             foreach ($equipos as $indice => $equipo) {
                 if ($indice == 0){
                     $nomequipo = $equipo['EQUIPO'];
-                    $equipo['TIPO'] = 'SUP';
-                    $equipo['RANGO'] = 0;
-                    $hwcentro['RACK'] = $equipo;
+                    // Determinamos si es un supervisor o un cofre (centros con 1 cofre sin supervisor)
+                    if (isset($equipo['DIRIP'])){
+                        $supervisor = true;
+                    }
+                    if ($supervisor){
+                        $equipo['TIPO'] = 'SUP';
+                        $equipo['RANGO'] = 0;
+                        $hwcentro['RACK'] = $equipo;
+                    }
+                    else{
+                        $nomcofre = $nomequipo;
+                        $equipo['TIPO'] = 'CONTPAN';
+                        $hwcentro['RACK']['EQUIPO'] = $nomequipo;
+                        $hwcentro['RACK']['COFRES'][$nomcofre]['CENTRO_ID'] =  $equipo['CENTRO_ID'];
+                        $hwcentro['RACK']['COFRES'][$nomcofre]['EQUIPO'] = $nomcofre;
+                        $hwcentro['RACK']['COFRES'][$nomcofre]['CODHW'] =  '';
+                        $hwcentro['RACK']['COFRES'][$nomcofre]['CODSW'] =  '';
+                        $hwcentro['RACK']['COFRES'][$nomcofre]['NSERIE'] =  '';
+                        $hwcentro['RACK']['COFRES'][$nomcofre]['RANGO'] = 1;
+                        $hwcentro['RACK']['COFRES'][$nomcofre]['FECHA'] = $equipo['FECHA'];
+                        $hwcentro['RACK']['COFRES'][$nomcofre]['TIPO'] = 'COFRE';
+                        $hwcentro['RACK']['COFRES'][$nomcofre]['CONTPAN'] = $equipo;
+                    }
                     $modelo = 'TRD050';
                     $tarjetas = array();
                     $tarjcanal = array();
@@ -278,75 +299,80 @@ class EquiposController extends AppController {
         if ($this->request->is('post') || $this->request->is('put')) {
             // Borramos los equipos del centro
             $this->Equipo->deleteAll(array('Equipo.centro_id' => $idcentro), false);
-            // Guardamos el rack>
-            $equipodb = array(
-                'nombre' => $hwcentro['RACK']['EQUIPO'], 'centro_id' => $idcentro,
-                'marca' => 'BTESA', 'codhw' => $hwcentro['RACK']['CODHW'],
-                'codsw' => $hwcentro['RACK']['CODSW'], 'nserie' => $hwcentro['RACK']['NSERIE'],
-                'snmp' => $hwcentro['RACK']['SNMP'], 'canal' => 0, 'fecha' => $hwcentro['RACK']['FECHA'],
-                'tipo' => 'SUP', 'rango' => 0, 'padre' => 0,
-            );
-            $this->Equipo->create();
-            if ($this->Equipo->save($equipodb)){
-                $idrack = $this->Equipo->id;
-                // Guardamos los cofres
-                foreach ($hwcentro['RACK']['COFRES'] as $equipo => $cofre) {
-                    $equipodb = array(
-                        'nombre' =>  $cofre['EQUIPO'], 'centro_id' => $idcentro,
-                        'marca' => 'BTESA', 'codhw' => $cofre['CODHW'], 'fecha' => $cofre['FECHA'],
-                        'canal' => 0, 'tipo' => 'COFRE', 'rango' => 1, 'padre' => $idrack,
-                    );
-                    $this->Equipo->create();
-                    if ($this->Equipo->save($equipodb)){
-                        $idcofre = $this->Equipo->id;
-                        $potencia = 0;
-                        if ($idcentro == 13){
-                            $potencia = $cofre['CONTPAN']['POTENCIA'];
-                        }
-                        $equipodb = array(
-                            'nombre' => $cofre['CONTPAN']['EQUIPO'], 'centro_id' => $idcentro,
-                            'codhw' => $cofre['CONTPAN']['CODHW'], 'codsw' => $cofre['CONTPAN']['CODSW'],
-                            'nserie' => $cofre['CONTPAN']['NSERIE'], 'fecha' => $cofre['CONTPAN']['FECHA'],
-                            'canal' => 0, 'tipo' => $cofre['CONTPAN']['TIPO'], 'marca' => 'BTESA',
-                            'rango' => 2, 'padre' => $idcofre, 'potencia' => $potencia,
-                        );
-                        $this->Equipo->create();
-                        if ($this->Equipo->save($equipodb)){
-                            foreach ($cofre['TARJETAS'] as $canal => $tarjetas) {
-                                $canal = substr($canal, -2);
-                                foreach ($tarjetas as $modulo => $tarjeta) {
-                                    $potencia = "-";
-                                    if(isset($tarjeta['POTENCIA'])){
-                                        $potencia = $tarjeta['POTENCIA'];
-                                    }
-                                    $equipodb = array(
-                                        'nombre' => $modulo, 'centro_id' => $idcentro,
-                                        'codhw' => $tarjeta['CODHW'], 'codsw' => $tarjeta['CODSW'],
-                                        'nserie' => $tarjeta['NSERIE'], 'canal' => $canal,'marca' => 'BTESA',
-                                        'rango' => 3, 'tipo' => 'TARJETA',  'padre' => $idcofre, 'potencia' => $potencia
-                                    );
-                                    $this->Equipo->create();
-                                    if (!$this->Equipo->save($equipodb)){
-                                        $this->Session->setFlash(__('<b>Error:</b> No se ha podido guardar la tarjeta' . ' ' . $canal . '-' . $equipodb['nombre']), 'default', array('class' => 'ink-alert basic error'));
-                                        $this->redirect(array('controller' => 'centros', 'action' => 'leerhw', $idcentro));
-                                    }
-                                }
-                            }
-                        }
-                        else{
-                            $this->Session->setFlash(__('<b>Error:</b> No se ha podido guardar el Panel de Control' . ' ' . $equipodb['nombre']), 'default', array('class' => 'ink-alert basic error'));
-                            $this->redirect(array('controller' => 'equipos', 'action' => 'leerhw', $idcentro));
-                        }
-                    }
-                    else{
-                        $this->Session->setFlash(__('<b>Error:</b> No se ha podido guardar el cofre' . ' ' . $equipodb['nombre']), 'default', array('class' => 'ink-alert basic error'));
-                        $this->redirect(array('controller' => 'equipos', 'action' => 'leerhw', $idcentro));
-                    }
+            // Guardamos el supervisor (si existe)
+            if ($supervisor) {
+                $equipodb = array(
+                    'nombre' => $hwcentro['RACK']['EQUIPO'], 'centro_id' => $idcentro,
+                    'marca' => 'BTESA', 'codhw' => $hwcentro['RACK']['CODHW'],
+                    'codsw' => $hwcentro['RACK']['CODSW'], 'nserie' => $hwcentro['RACK']['NSERIE'],
+                    'snmp' => $hwcentro['RACK']['SNMP'], 'canal' => 0, 'fecha' => $hwcentro['RACK']['FECHA'],
+                    'tipo' => 'SUP', 'rango' => 0, 'padre' => 0,
+                );
+                $this->Equipo->create();
+                if ($this->Equipo->save($equipodb)){
+                    $idrack = $this->Equipo->id;
+                }
+                else{
+                    $this->Session->setFlash(__('<b>Error:</b> No se ha podido guardar el bastidor' . ' ' . $hwcentro['RACK']['EQUIPO']), 'default', array('class' => 'ink-alert basic error'));
+                    $this->redirect(array('controller' => 'equipos', 'action' => 'leerhw', $idcentro));
                 }
             }
             else{
-                $this->Session->setFlash(__('<b>Error:</b> No se ha podido guardar el bastidor' . ' ' . $hwcentro['RACK']['EQUIPO']), 'default', array('class' => 'ink-alert basic error'));
-                $this->redirect(array('controller' => 'equipos', 'action' => 'leerhw', $idcentro));
+                $idrack = 0;
+            }
+            // Guardamos los cofres
+            foreach ($hwcentro['RACK']['COFRES'] as $equipo => $cofre) {
+                $equipodb = array(
+                    'nombre' =>  $cofre['EQUIPO'], 'centro_id' => $idcentro,
+                    'marca' => 'BTESA', 'codhw' => $cofre['CODHW'], 'fecha' => $cofre['FECHA'],
+                    'canal' => 0, 'tipo' => 'COFRE', 'rango' => 1, 'padre' => $idrack,
+                );
+                $this->Equipo->create();
+                if ($this->Equipo->save($equipodb)){
+                    $idcofre = $this->Equipo->id;
+                    $potencia = 0;
+                    if ($idcentro == 13){
+                        $potencia = $cofre['CONTPAN']['POTENCIA'];
+                    }
+                    $equipodb = array(
+                        'nombre' => $cofre['CONTPAN']['EQUIPO'], 'centro_id' => $idcentro,
+                        'codhw' => $cofre['CONTPAN']['CODHW'], 'codsw' => $cofre['CONTPAN']['CODSW'],
+                        'nserie' => $cofre['CONTPAN']['NSERIE'], 'fecha' => $cofre['CONTPAN']['FECHA'],
+                        'canal' => 0, 'tipo' => $cofre['CONTPAN']['TIPO'], 'marca' => 'BTESA',
+                        'rango' => 2, 'padre' => $idcofre, 'potencia' => $potencia,
+                    );
+                    $this->Equipo->create();
+                    if ($this->Equipo->save($equipodb)){
+                        foreach ($cofre['TARJETAS'] as $canal => $tarjetas) {
+                            $canal = substr($canal, -2);
+                            foreach ($tarjetas as $modulo => $tarjeta) {
+                                $potencia = "-";
+                                if(isset($tarjeta['POTENCIA'])){
+                                    $potencia = $tarjeta['POTENCIA'];
+                                }
+                                $equipodb = array(
+                                    'nombre' => $modulo, 'centro_id' => $idcentro,
+                                    'codhw' => $tarjeta['CODHW'], 'codsw' => $tarjeta['CODSW'],
+                                    'nserie' => $tarjeta['NSERIE'], 'canal' => $canal,'marca' => 'BTESA',
+                                    'rango' => 3, 'tipo' => 'TARJETA',  'padre' => $idcofre, 'potencia' => $potencia
+                                );
+                                $this->Equipo->create();
+                                if (!$this->Equipo->save($equipodb)){
+                                    $this->Session->setFlash(__('<b>Error:</b> No se ha podido guardar la tarjeta' . ' ' . $canal . '-' . $equipodb['nombre']), 'default', array('class' => 'ink-alert basic error'));
+                                    $this->redirect(array('controller' => 'centros', 'action' => 'leerhw', $idcentro));
+                                }
+                            }
+                        }
+                    }
+                    else{
+                        $this->Session->setFlash(__('<b>Error:</b> No se ha podido guardar el Panel de Control' . ' ' . $equipodb['nombre']), 'default', array('class' => 'ink-alert basic error'));
+                        $this->redirect(array('controller' => 'equipos', 'action' => 'leerhw', $idcentro));
+                    }
+                }
+                else{
+                    $this->Session->setFlash(__('<b>Error:</b> No se ha podido guardar el cofre' . ' ' . $equipodb['nombre']), 'default', array('class' => 'ink-alert basic error'));
+                    $this->redirect(array('controller' => 'equipos', 'action' => 'leerhw', $idcentro));
+                }
             }
             $this->Session->setFlash(__('Equipos guardados correctamente'), 'default', array('class' => 'ink-alert basic success'));
             $this->redirect(array('controller' => 'equipos', 'action' => 'centro', $idcentro));
