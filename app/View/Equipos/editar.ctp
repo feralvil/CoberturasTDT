@@ -11,12 +11,16 @@ echo $this->Form->create('Equipo',array(
     'class' => 'ink-form'
 ));
 ?>
-<h3><?php echo __('Modificar') . ' ' . $tipoequipo[$this->request->data['Equipo']['tipo']]. ' ' . $this->request->data['Equipo']['nombre'];?></h3>
+<h3>
+    <?php
+        echo __('Modificar') . ' ' . $tipoequipo[$this->request->data['Equipo']['tipo']]. ' ' . $this->request->data['Equipo']['nombre'];
+        if ($this->request->data['Equipo']['tipo'] == 'TARJETA'){
+            echo ' &mdash; CH ' . $this->request->data['Equipo']['canal'];
+        }
+    ?>
+</h3>
 <fieldset class="column-group gutters">
-<?php
-if ($this->request->data['Equipo']['tipo'] == 'COFRE'){
-?>
-    <div class="control-group large-30 required validation error">
+    <div class="control-group large-20 required validation error">
         <?php
         echo $this->Form->label('Equipo.marca', __('Marca del Equipo'));
         echo $this->Form->input('Equipo.marca', array('div' => array('class' => 'control')));
@@ -28,15 +32,18 @@ if ($this->request->data['Equipo']['tipo'] == 'COFRE'){
         echo $this->Form->input('Equipo.codhw', array('div' => array('class' => 'control')));
         ?>
     </div>
-    <div class="control-group large-40">
+    <div class="control-group large-30">
         <?php
         echo $this->Form->label('Equipo.nserie', __('Número de Serie'));
         echo $this->Form->input('Equipo.nserie', array('div' => array('class' => 'control')));
         ?>
     </div>
-<?php
-}
-?>
+    <div class="control-group large-20">
+        <?php
+        echo $this->Form->label('Equipo.codsw', __('Código Software'));
+        echo $this->Form->input('Equipo.codsw', array('div' => array('class' => 'control')));
+        ?>
+    </div>
 </fieldset>
 
 <div class='content-center'>

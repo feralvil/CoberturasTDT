@@ -29,6 +29,7 @@ if ($nequipos > 0){
                             <th><?php echo __('Código Hardware'); ?></th>
                             <th><?php echo __('Código Software'); ?></th>
                             <th><?php echo __('Número de Serie'); ?></th>
+                            <th><?php echo __('Acciones'); ?></th>
                         </tr>
                         <tr>
                             <td><?php echo $bastidor['fecha']; ?></td>
@@ -36,6 +37,15 @@ if ($nequipos > 0){
                             <td><?php echo $bastidor['codhw']; ?></td>
                             <td><?php echo $bastidor['codsw']; ?></td>
                             <td><?php echo $bastidor['nserie']; ?></td>
+                            <td class="content-center">
+                                <?php
+                                echo $this->Html->Link(
+                                        '<i class = "icon-edit"></i>',
+                                        array('controller' => 'equipos', 'action' => 'editar', $bastidor['id']),
+                                        array('title' => __('Editar Equipo'), 'alt' => __('Editar Emisión'), 'escape' => false)
+                                );
+                                ?>
+                            </td>
                         </tr>
                     </table>
                 <?php
@@ -98,6 +108,7 @@ if ($nequipos > 0){
                                     <th><?php echo __('Código Software'); ?></th>
                                     <th><?php echo __('Número de Serie'); ?></th>
                                     <th><?php echo __('Potencia'); ?></th>
+                                    <th><?php echo __('Acciones'); ?></th>
                                 </tr>
                                 <tr>
                                     <td><?php echo $cofre['TRANSMISOR']['marca']; ?></td>
@@ -105,6 +116,15 @@ if ($nequipos > 0){
                                     <td><?php echo $cofre['TRANSMISOR']['codsw']; ?></td>
                                     <td><?php echo $cofre['TRANSMISOR']['nserie']; ?></td>
                                     <td><?php echo $cofre['TRANSMISOR']['potencia']; ?></td>
+                                    <td class="content-center">
+                                        <?php
+                                        echo $this->Html->Link(
+                                                '<i class = "icon-edit"></i>',
+                                                array('controller' => 'equipos', 'action' => 'editar',  $cofre['TRANSMISOR']['id']),
+                                                array('title' => __('Editar Equipo'), 'alt' => __('Editar Emisión'), 'escape' => false)
+                                        );
+                                        ?>
+                                    </td>
                                 </tr>
                             </table>
                         <?php
@@ -118,12 +138,22 @@ if ($nequipos > 0){
                                     <th><?php echo __('Código Hardware'); ?></th>
                                     <th><?php echo __('Código Software'); ?></th>
                                     <th><?php echo __('Número de Serie'); ?></th>
+                                    <th><?php echo __('Acciones'); ?></th>
                                 </tr>
                                 <tr>
                                     <td><?php echo $cofre['CONTPAN']['marca']; ?></td>
                                     <td><?php echo $cofre['CONTPAN']['codhw']; ?></td>
                                     <td><?php echo $cofre['CONTPAN']['codsw']; ?></td>
                                     <td><?php echo $cofre['CONTPAN']['nserie']; ?></td>
+                                    <td class="content-center">
+                                        <?php
+                                        echo $this->Html->Link(
+                                                '<i class = "icon-edit"></i>',
+                                                array('controller' => 'equipos', 'action' => 'editar',  $cofre['CONTPAN']['id']),
+                                                array('title' => __('Editar Equipo'), 'alt' => __('Editar Emisión'), 'escape' => false)
+                                        );
+                                        ?>
+                                    </td>
                                 </tr>
                             </table>
                         <?php
@@ -145,9 +175,9 @@ if ($nequipos > 0){
                                 }
                                 ?>
                                 <th><?php echo __('Marca'); ?></th>
-                                <th><?php echo __('Código Hardware'); ?></th>
-                                <th><?php echo __('Código Software'); ?></th>
-                                <th><?php echo __('Número de Serie'); ?></th>
+                                <th><?php echo __('Modelo'); ?></th>
+                                <th><?php echo __('Cód. Software'); ?></th>
+                                <th><?php echo __('N. Serie'); ?></th>
                                 <?php
                                 if ($centro['Centro']['id'] != 13){
                                 ?>
@@ -155,6 +185,7 @@ if ($nequipos > 0){
                                 <?php
                                 }
                                 ?>
+                                <th><?php echo __('Acciones'); ?></th>
                             </tr>
                             <?php
                             $inicio = true;
@@ -181,6 +212,15 @@ if ($nequipos > 0){
                                         <?php
                                         }
                                         ?>
+                                        <td class="content-center">
+                                            <?php
+                                            echo $this->Html->Link(
+                                                    '<i class = "icon-edit"></i>',
+                                                    array('controller' => 'equipos', 'action' => 'editar',  $valores['id']),
+                                                    array('title' => __('Editar Equipo'), 'alt' => __('Editar Emisión'), 'escape' => false)
+                                            );
+                                            ?>
+                                        </td>
                                     </tr>
                             <?php
                                     $inicio = !($inicio);

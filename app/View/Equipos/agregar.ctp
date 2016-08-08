@@ -10,7 +10,8 @@ $this->Js->event('change', $functab);
 <?php
 $tipoequipo = array(
     'SUP' => __('Supervisor'), 'COFRE' => __('Cofre'), 'CONTPAN' => ('Panel de Control'), 'TARJETA' => __('Tarjeta'),
-    'YAGI' => __('Antena Yagi'), 'MTR' => __('Decodificador Satélite'), 'GPSC' => 'Cofre GPS', 'GPST' => 'Tarjeta GPS'
+    'YAGI' => __('Antena Yagi'), 'MTR' => __('Decodificador Satélite'), 'GPSC' => 'Cofre GPS', 'GPST' => 'Tarjeta GPS',
+    'MODEM' => __('Módem 3G/GPRS'),
 );
 echo $this->Form->create('Equipo',array(
     'inputDefaults' => array(
@@ -31,7 +32,7 @@ echo $this->Form->create('Equipo',array(
 </fieldset>
 <div id="SUP" class="tabs-content hide-all">
     <fieldset class="column-group gutters">
-        <div class="control-group large-30 required validation error">
+        <div class="control-group large-20 required validation error">
             <?php
             echo $this->Form->label('Equipo.marca', __('Marca del Equipo'));
             echo $this->Form->input('Equipo.marca', array('div' => array('class' => 'control'), 'value' => 'BTESA'));
@@ -43,7 +44,13 @@ echo $this->Form->create('Equipo',array(
             echo $this->Form->input('Equipo.codhw', array('div' => array('class' => 'control')));
             ?>
         </div>
-        <div class="control-group large-40">
+        <div class="control-group large-20 required validation error">
+            <?php
+            echo $this->Form->label('Equipo.codsw', __('Código Software'));
+            echo $this->Form->input('Equipo.codsw', array('div' => array('class' => 'control')));
+            ?>
+        </div>
+        <div class="control-group large-30">
             <?php
             echo $this->Form->label('Equipo.nserie', __('Número de Serie'));
             echo $this->Form->input('Equipo.nserie', array('div' => array('class' => 'control')));
