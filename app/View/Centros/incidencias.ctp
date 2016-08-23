@@ -23,8 +23,8 @@ if ($centro['Centro']['equipo'] == 'BTESA'){
     <fieldset class="column-group gutters">
         <div class="control-group large-60 required validation error">
             <?php
-            echo $this->Form->label('Centro.eventos_id', __('Seleccionar centro BBDD'));
-            echo $this->Form->input('Centro.eventos_id', array(
+            echo $this->Form->label('Centro.evento_id', __('Seleccionar centro BBDD'));
+            echo $this->Form->input('Centro.evento_id', array(
                 'options' => $centrosinc,
                 'div' => array('class' => 'control'),
                 'empty' => __('Seleccionar')
