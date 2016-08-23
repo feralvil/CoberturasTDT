@@ -1,4 +1,4 @@
-<h1><?php echo __('Actualizar ID de Incidencias de Centro TDT');?></h1>
+<h1><?php echo __('Actualizar ID de Eventos de Centro TDT');?></h1>
 <table class="ink-table bordered alternating hover">
     <tr>
         <th><?php echo __('Centro');?></th>
@@ -23,8 +23,8 @@ if ($centro['Centro']['equipo'] == 'BTESA'){
     <fieldset class="column-group gutters">
         <div class="control-group large-60 required validation error">
             <?php
-            echo $this->Form->label('Centro.incidencias_id', __('Seleccionar centro BBDD'));
-            echo $this->Form->input('Centro.incidencias_id', array(
+            echo $this->Form->label('Centro.eventos_id', __('Seleccionar centro BBDD'));
+            echo $this->Form->input('Centro.eventos_id', array(
                 'options' => $centrosinc,
                 'div' => array('class' => 'control'),
                 'empty' => __('Seleccionar')

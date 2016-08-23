@@ -44,9 +44,17 @@ $ficherocsv = 'files/eventos_' . $fecha . '.csv';
                                 if ($datos[$i] != ''){
                                     $vectordato = explode(' ', $datos[$i]);
                                     $vectorfecha = explode('/', $vectordato[0]);
-                                    $fecha = "20" . $vectorfecha[2] . '-' . $vectorfecha[1] . '-' . $vectorfecha[0];
+                                    $fechacsv = "20" . $vectorfecha[2] . '-' . $vectorfecha[1] . '-' . $vectorfecha[0];
+                                    $anyoact = substr($fecha, 0, 2);
+                                    if ($anyo != $anyoact){
+                                        $anyo = "19" . $anyo;
+                                    }
+                                    else{
+                                        $anyo = "20" . $anyo;
+                                    }
+                                    $fechacsv =  $anyo . '-' . $vectorfecha[1] . '-' . $vectorfecha[0];
                                     $hora = $vectordato[1];
-                                    $datos[$i] = $fecha . ' ' .$hora;
+                                    $datos[$i] = $fechacsv . ' ' .$hora;
                                 }
                             }
                             echo '<' . $tag . '>' . utf8_encode ($datos[$i]) . '</' . $tag . '>';

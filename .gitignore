@@ -23,7 +23,7 @@
 /app/Config/core.php
 /app/Config/database.php
 /vendors/*
-/app/webroot/eventos_update.php
+/app/webroot/eventos_upd*
 /app/webroot/files/*
 /app/Vendor/*
 
