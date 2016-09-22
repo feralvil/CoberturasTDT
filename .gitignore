@@ -24,6 +24,7 @@
 /app/Config/database.php
 /vendors/*
 /app/webroot/eventos_upd*
+/app/webroot/eventos_del*
 /app/webroot/files/*
 /app/Vendor/*
 

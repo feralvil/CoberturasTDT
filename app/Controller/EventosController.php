@@ -19,7 +19,7 @@ class EventosController extends AppController {
             $accPerm = array();
             if ($rol == 'colab') {
                 $accPerm = array(
-                    'index', 'detalle', 'xlseventos'
+                    'index', 'detalle', 'xlseventos', 'xlshistorico'
                 );
             }
             elseif ($rol == 'consum') {
@@ -35,6 +35,10 @@ class EventosController extends AppController {
     }
 
     public function index(){
+        // Clases para la lectura de ficheros:
+        App::uses('Folder', 'Utility');
+        //App::uses('File', 'Utility');
+
         // Fijamos el título de la vista
         $this->set('title_for_layout', __('Eventos de Centros TDT de la Generalitat'));
 
@@ -88,6 +92,24 @@ class EventosController extends AppController {
         }
         $this->set('fechas', $fechas_inicio);
 
+        // Buscamos los historicos:
+        $dir = new Folder(WWW_ROOT . 'files');
+        $ficheros = $dir->find('Historico.*\.csv', true);
+        $historicos = array();
+        $mesnom = array(
+            '01' => __('Enero'), '02' => __('Febrero'), '03' => __('Marzo'),
+            '04' => __('Abril'), '05' => __('Mayo'), '06' => __('Junio'),
+            '07' => __('Julio'), '08' => __('Agosto'), '09' => __('Septiembre'),
+            '10' => __('Octubre'), '11' => __('Noviembre'), '12' => __('Diciembre'),
+        );
+        foreach ($ficheros as $nom_fichero) {
+            $fecha = substr($nom_fichero, 10, 7);
+            $anyo = substr($nom_fichero, 10, 4);
+            $mes = substr($nom_fichero, 15, 2);
+            $mestxt = $mesnom[$mes];
+            $historicos[$fecha] = $mestxt . ' ' . $anyo;
+        }
+        $this->set('historicos', $historicos);
 
         // Comprobamos si hemos recibido datos del formulario:
         $condiciones = array();
@@ -189,6 +211,33 @@ class EventosController extends AppController {
             }
             $this->Components->unload('DebugKit.Toolbar');
             $this->layout = 'xls';
+        }
+        else {
+            throw new MethodNotAllowedException(__('Error: Método de Acceso no Autorizado'));
+        }
+    }
+
+    public function xlshistorico(){
+        // Clases para la lectura de ficheros:
+        App::uses('Folder', 'Utility');
+        App::uses('File', 'Utility');
+        if ($this->request->is('post') || $this->request->is('put')) {
+            if (isset($this->request->data['Evento']['fecha'])){
+                $fecha = $this->request->data['Evento']['fecha'];
+                $nomFichero = 'Historico_' . $fecha . '.csv';
+                $dir = new Folder(WWW_ROOT . 'files');
+                $ficheros = $dir->find($nomFichero, true);
+                if (count($ficheros) > 0){
+                    $this->response->file(WWW_ROOT.'files/'. $nomFichero, array('download' => true, 'name' => $nomFichero));
+                    return $this->response;
+                }
+                else{
+                    throw new NotFoundException(__('Error: No se ha encontrado el fichero CSV'));
+                }
+            }
+            else{
+                throw new NotFoundException(__('Error: No se ha definido la fecha'));
+            }
         }
         else {
             throw new MethodNotAllowedException(__('Error: Método de Acceso no Autorizado'));

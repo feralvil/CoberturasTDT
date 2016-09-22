@@ -3,12 +3,18 @@
 $next = $this->Paginator->counter('{:page}') + 1;
 $prev = $this->Paginator->counter('{:page}') - 1;
 $ultima = $this->Paginator->counter('{:pages}');
+$fecha = 'Nada';
+if (isset($this->request->data['Evento'])){
+    $fecha  = $this->request->data['Evento']['historico'];
+}
 $this->Js->get("#anterior");
 $this->Js->event('click', "$('#EventoIrapag').val($prev);$('#EventoIndexForm').submit();");
 $this->Js->get("#siguiente");
 $this->Js->event('click', "$('#EventoIrapag').val($next);$('#EventoIndexForm').submit();");
 $this->Js->get("#primera");
 $this->Js->event('click', "$('#EventoIrapag').val(1);$('#EventoIndexForm').submit();");
+$this->Js->get("#historico");
+$this->Js->event('click', "$('#EventoFecha').val('$fecha');$('#HistoricosExcel').submit();");
 $this->Js->get("select");
 $this->Js->event('change', '$("#EventoIndexForm").submit();');
 $this->Js->get("#ultima");
@@ -66,7 +72,7 @@ echo $this->Form->hidden('irapag', array('value' => '0'));
             ?>
         </div>
     </div>
-    <div class="control-group large-40">
+    <div class="control-group large-30">
         <div class="column-group gutters">
             <?php
             $opciones = array();
@@ -78,7 +84,7 @@ echo $this->Form->hidden('irapag', array('value' => '0'));
             ?>
         </div>
     </div>
-    <div class="control-group large-40">
+    <div class="control-group large-30">
         <div class="column-group gutters">
             <?php
             $opciones = array();
@@ -97,6 +103,26 @@ echo $this->Form->hidden('irapag', array('value' => '0'));
             ?>
         </div>
     </div>
+    <?php
+    if (count($historicos) > 0){
+    ?>
+        <div class="control-group large-30">
+            <div class="column-group gutters">
+                <?php
+                echo $this->Form->label('Evento.historico', __('Histórico'), array('class' => 'content-right large-30'));
+                echo $this->Form->input('Evento.historico', array('options' => $historicos, 'empty' => __('Seleccionar'), 'div' => 'control large-50'));
+                if ((isset($this->request->data['Evento']['historico'])) && ($this->request->data['Evento']['historico'] != "")) {
+                    echo $this->Form->button(
+                        '<i class = "icon-calendar"></i>',
+                        array('id' => 'historico', 'class' => 'ink-button blue', 'title' => __('Exportar a Excel'), 'alt' => __('Exportar a Excel'), 'escape' => false)
+                    );
+                }
+                ?>
+            </div>
+        </div>
+    <?php
+    }
+    ?>
 </fieldset>
 
 <h4>
@@ -170,13 +196,19 @@ echo $this->Form->hidden('irapag', array('value' => '0'));
         if (((AuthComponent::user('role') == 'admin') || (AuthComponent::user('role') == 'colab')) && (isset($this->request->data['Evento']['centro_id'])) && ($this->request->data['Evento']['centro_id'] > 0) && ($neventos > 0) && ($toteventos < 10000)) {
             echo $this->Html->Link(
                 '<i class = "icon-calendar"></i> '.__('Excel'), '#',
-                array('id' => 'excel', 'class' => 'ink-button blue', 'title' => __('Exportar a Excel'), 'alt' => __('Exportar a Excel'), 'target' => '_blank', 'escape' => false)
+                array('id' => 'excel', 'class' => 'ink-button blue', 'title' => __('Exportar a Excel'), 'alt' => __('Exportar a Excel'), 'escape' => false)
             );
         }
         ?>
     </div>
 </div>
 <?php
+echo $this->Form->end();
+echo $this->Form->create('Evento',array(
+    'inputDefaults' => array('label' => false, 'div' => false),
+    'action' => 'xlshistorico', 'id' => 'HistoricosExcel', 'target' => '_blank'
+));
+echo $this->Form->hidden('fecha');
 echo $this->Form->end();
 if ($neventos > 0){
     if (isset($this->request->data['Evento'])){

@@ -57,7 +57,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
                     <?php echo $this->fetch('content'); ?>
 		</div>
 		<div id="footer"  class="content-center">
-                    <p>DGTIC &mdash; Servici de Telecomunicacions i Societat Digital</p>
+            <p>DGTIC &mdash; Servici de Telecomunicacions i Societat Digital</p>
 		</div>
 	</div>
     	<?php
