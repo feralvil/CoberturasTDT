@@ -336,11 +336,15 @@ $this->Js->event('click', $functab);
                 <th><?php echo __('Potencia ajustada'); ?></th>
                 <th><?php echo __('Tipo de equipo'); ?></th>
                 <th><?php echo __('Polaridad'); ?></th>
+                <th><?php echo __('Fuente Múx. Nacionales'); ?></th>
+                <th><?php echo __('Fuente Múx. Autonómico'); ?></th>
             </tr>
             <tr>
                 <td><?php echo $centro['Centro']['pajustada']; ?> W</td>
                 <td><?php echo $centro['Centro']['equipo']; ?></td>
                 <td><?php echo $polaridad; ?></td>
+                <td><?php echo $centro['Centro']['depmuxnac']; ?></td>
+                <td><?php echo $centro['Centro']['depmuxaut']; ?></td>
             </tr>
         </table>
         <div class='content-center'>

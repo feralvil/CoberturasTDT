@@ -22,7 +22,7 @@ class CentrosController extends AppController {
                     'index', 'detalle', 'editar', 'agregar', 'cobertura', 'tipologia', 'updateTipo', 'emisiones',
                     'impemisiones', 'multiples', 'impkml', 'leerkml', 'mapacentro', 'xlscentros', 'xlsdescargar',
                     'apagar', 'mapadet', 'xlsanexo', 'supervision', 'importarhw', 'leerhw', 'propietarios', 'equipos',
-                    'incidencias'
+                    'incidencias', 'dependencia'
                 );
             }
             elseif ($rol == 'consum') {
@@ -903,6 +903,71 @@ class CentrosController extends AppController {
         else{
             $this->Session->setFlash(__('Error: No se ha encontrado el fichero de datos de Incidencias de los Centros'), 'default', array('class' => 'ink-alert basic error'));
             $this->redirect(array('controller' => 'centros', 'action' => 'index'));
+        }
+    }
+
+    public function dependencia(){
+        $this->Centro->recursive = -1;
+        // Buscamos el fichero
+        App::uses('Folder', 'Utility');
+        App::uses('File', 'Utility');
+        // Comrpobamos si existe
+        $ruta = 'files' . DS . 'Centros_Dependencia.ods';
+        $fichero = new File($ruta, false);
+        if ($fichero->exists()){
+            // Cargamos la clase para leer el fichero Excel:
+            App::import('Vendor', 'Classes/PHPExcel');
+            // Intentamos cargar el fichero
+            try{
+                $tipoFich = PHPExcel_IOFactory::identify($ruta);
+                $objReader = PHPExcel_IOFactory::createReader($tipoFich);
+                // Sólo nos interesa cargar los datos:
+                $objReader->setReadDataOnly(true);
+                $objPHPExcel = $objReader->load($ruta);
+            }
+            catch(Exception $e){
+                die("Error al cargar el fichero de datos: ".$e->getMessage());
+            }
+            // Nos vamos a la hoja de Catastro
+            // Fijamos como hoja activa la primera (sólo se importa una)
+            $objPHPExcel->setActiveSheetIndex(0);
+            // Obtenemos el número de filas de la hoja:
+            $maxfila = $objPHPExcel->getActiveSheet()->getHighestRow() + 1;
+            $fila = 2;
+            $centros = array();
+            while (($fila < $maxfila) && ($objPHPExcel->getActiveSheet()->getCell("A" . $fila)->getValue()!= "")){
+                $idcentro = $objPHPExcel->getActiveSheet()->getCell("A" . $fila)->getValue();
+                $centro = $this->Centro->read(null, $idcentro);
+                $centro['Centro']['depmuxnac'] = $objPHPExcel->getActiveSheet()->getCell("C" . $fila)->getValue();
+                $centro['Centro']['depmuxaut'] = $objPHPExcel->getActiveSheet()->getCell("D" . $fila)->getValue();
+                $centros[] = $centro;
+                $fila++;
+            }
+            if ($this->request->is('post') || $this->request->is('put')) {
+                $ncentros = 0;
+                foreach ($centros as $centro) {
+                    //$this->Centro->id = $centro['Centro']['id'];
+                    $this->Centro->read(null, $centro['Centro']['id']);
+                    $this->Centro->set(array(
+                        'depmuxnac' => $centro['Centro']['depmuxnac'],
+                        'depmuxaut' => $centro['Centro']['depmuxaut'],
+                    ));
+                    if ($this->Centro->save()){
+                        $ncentros++;
+                    }
+                    else{
+                        $this->Session->setFlash(__('Error al guardar datos de Propiedad del Centro') . ' ' . $centro['Centro']['centro'], 'default', array('class' => 'ink-alert basic error'));
+                        $this->redirect(array('controller' => 'centros', 'action' => 'propietarios'));
+                    }
+                }
+                $this->Session->setFlash(__('Datos de dependencia de') . ' ' . $ncentros . ' ' . __('centros importados correctamente'), 'default', array('class' => 'ink-alert basic success'));
+                $this->redirect(array('controller' => 'centros', 'action' => 'index'));
+
+            }
+            else{
+                $this->set('title_for_layout', __('Importar datos de Dependencia de Centro TDT'));
+                $this->set('centros', $centros);
+            }
         }
     }
 }

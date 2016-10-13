@@ -59,7 +59,7 @@ $estiloCentro = array(
 // Título de la Hoja:
 $objPHPExcel->getActiveSheet()->setCellValue('A1', __('Centros TDT de la Generalitat'));
 $objPHPExcel->getActiveSheet()->getStyle('A1')->applyFromArray($estiloTitulo);
-$objPHPExcel->getActiveSheet()->mergeCells('A1:O1');
+$objPHPExcel->getActiveSheet()->mergeCells('A1:S1');
 
 
 // Fila de títulos:
@@ -75,12 +75,15 @@ foreach ($multiples as $nom_mux) {
     $objPHPExcel->getActiveSheet()->setCellValue($columna[$i] . '3', $nom_mux);
     $i++;
 }
-$objPHPExcel->getActiveSheet()->setCellValue("L3", __('Equipo'));
-$objPHPExcel->getActiveSheet()->setCellValue("M3", __('Polaridad'));
-$objPHPExcel->getActiveSheet()->setCellValue("N3", __('Referencia Catastral'));
-$objPHPExcel->getActiveSheet()->setCellValue("O3", __('Municipios Cubiertos'));
-$objPHPExcel->getActiveSheet()->setCellValue("P3", __('Habitantes Cubiertos'));
-$objPHPExcel->getActiveSheet()->getStyle('A3:P3')->applyFromArray($estiloTh);
+$objPHPExcel->getActiveSheet()->setCellValue("L3", __('Fuente Mux. Nacionales'));
+$objPHPExcel->getActiveSheet()->setCellValue("M3", __('Fuente Mux. Autonómico'));
+$objPHPExcel->getActiveSheet()->setCellValue("N3", __('Equipo'));
+$objPHPExcel->getActiveSheet()->setCellValue("O3", __('Polaridad'));
+$objPHPExcel->getActiveSheet()->setCellValue("P3", __('Potencia'));
+$objPHPExcel->getActiveSheet()->setCellValue("Q3", __('Referencia Catastral'));
+$objPHPExcel->getActiveSheet()->setCellValue("R3", __('Municipios Cubiertos'));
+$objPHPExcel->getActiveSheet()->setCellValue("S3", __('Habitantes Cubiertos'));
+$objPHPExcel->getActiveSheet()->getStyle('A3:S3')->applyFromArray($estiloTh);
 // Imprimimos los Centros:
 $fila =  $finicio = 3;
 foreach ($centros as $centro) {
@@ -95,44 +98,36 @@ foreach ($centros as $centro) {
         $objPHPExcel->getActiveSheet()->setCellValue($columna[$idcol] . $fila , $centro['Centro'][$nom_mux]);
         $idcol++;
     }
-    $objPHPExcel->getActiveSheet()->setCellValue("L" . $fila, $centro['Centro']['equipo']);
-    $objPHPExcel->getActiveSheet()->setCellValue("M" . $fila, $centro['Centro']['polaridad']);
-    $objPHPExcel->getActiveSheet()->setCellValue("N" . $fila, $centro['Centro']['catastro']);
-    $objPHPExcel->getActiveSheet()->setCellValue("O" . $fila, count($centro['Cobertura']));
-    $objPHPExcel->getActiveSheet()->setCellValue("P" . $fila, $centro['Centro']['habCubiertos']);
+    $objPHPExcel->getActiveSheet()->setCellValue("L" . $fila, $centro['Centro']['depmuxnac']);
+    $objPHPExcel->getActiveSheet()->setCellValue("M" . $fila, $centro['Centro']['depmuxaut']);
+    $objPHPExcel->getActiveSheet()->setCellValue("N" . $fila, $centro['Centro']['equipo']);
+    $objPHPExcel->getActiveSheet()->setCellValue("O" . $fila, $centro['Centro']['polaridad']);
+    $objPHPExcel->getActiveSheet()->setCellValue("P" . $fila, $centro['Centro']['pajustada']);
+    $objPHPExcel->getActiveSheet()->setCellValue("Q" . $fila, $centro['Centro']['catastro']);
+    $objPHPExcel->getActiveSheet()->setCellValue("R" . $fila, count($centro['Cobertura']));
+    $objPHPExcel->getActiveSheet()->setCellValue("S" . $fila, $centro['Centro']['habCubiertos']);
     $totHabitantes = $totHabitantes + $centro['Centro']['habCubiertos'];
     if (($fila % 2) == 1){
-        $objPHPExcel->getActiveSheet()->getStyle('A'.$fila.':'.'P'.$fila)->applyFromArray($estiloRelleno);
+        $objPHPExcel->getActiveSheet()->getStyle('A'.$fila.':'.'S'.$fila)->applyFromArray($estiloRelleno);
     }
 }
 $filafin = $fila;
-$objPHPExcel->getActiveSheet()->getStyle('A'.$finicio.':'.'P'.$filafin)->applyFromArray($estiloCelda);
+$objPHPExcel->getActiveSheet()->getStyle('A'.$finicio.':'.'S'.$filafin)->applyFromArray($estiloCelda);
 $objPHPExcel->getActiveSheet()->getStyle('D'.$finicio.':'.'K'.$filafin)->applyFromArray($estiloCentro);
 $fila++;
 $objPHPExcel->getActiveSheet()->setCellValue("A" . $fila, __('Total Habitantes Cubiertos'));
-$objPHPExcel->getActiveSheet()->mergeCells('A'.$fila.':'.'O'.$fila);
-$objPHPExcel->getActiveSheet()->setCellValue("P" . $fila, $this->Number->format($totHabitantes, array('places' => 0, 'before' => '', 'thousands' => '.')));
-$objPHPExcel->getActiveSheet()->getStyle('P'.$fila)->getNumberFormat()->setFormatCode('#.##0');
+$objPHPExcel->getActiveSheet()->mergeCells('A'.$fila.':'.'R'.$fila);
+$objPHPExcel->getActiveSheet()->setCellValue("S" . $fila, $this->Number->format($totHabitantes, array('places' => 0, 'before' => '', 'thousands' => '.')));
+$objPHPExcel->getActiveSheet()->getStyle('S'.$fila)->getNumberFormat()->setFormatCode('#.##0');
 if (($fila % 2) == 1){
-    $objPHPExcel->getActiveSheet()->getStyle('A'.$fila.':'.'P'.$fila)->applyFromArray($estiloRelleno);
+    $objPHPExcel->getActiveSheet()->getStyle('A'.$fila.':'.'S'.$fila)->applyFromArray($estiloRelleno);
 }
-$objPHPExcel->getActiveSheet()->getStyle('A'.$fila.':'.'P'.$fila)->applyFromArray($estiloCelda);
-$objPHPExcel->getActiveSheet()->getColumnDimension('A')->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension('B')->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension('C')->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension('D')->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension('E')->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension('F')->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension('G')->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension('H')->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension('I')->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension('J')->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension('K')->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension('L')->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension('M')->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension('N')->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension('O')->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension('P')->setAutoSize(true);
+$objPHPExcel->getActiveSheet()->getStyle('A'.$fila.':'.'S'.$fila)->applyFromArray($estiloCelda);
+$colmax = $objPHPExcel->getActiveSheet()->getHighestColumn();
+$maxcol = PHPExcel_Cell::columnIndexFromString($colmax);
+for ($i = 0; $i < $maxcol; $i++){
+    $objPHPExcel->getActiveSheet()->getColumnDimensionByColumn($i)->setAutoSize(true);
+}
 
 // Generamos el fichero:
 header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');

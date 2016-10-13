@@ -109,19 +109,19 @@ echo $this->Form->create('Centros',array(
 
 <h3><?php echo __('Otros datos del Centro');?></h3>
 <fieldset class="column-group gutters">
-    <div class="control-group large-33">
+    <div class="control-group large-20">
         <?php
         echo $this->Form->label('Centro.pajustada', __('Potencia Ajustada'));
         echo $this->Form->input('Centro.pajustada', array('div' => array('class' => 'control')));
         ?>
     </div>
-    <div class="control-group large-33">
+    <div class="control-group large-20">
         <?php
         echo $this->Form->label('Centro.equipo', __('Tipo de equipo'));
         echo $this->Form->input('Centro.equipo', array('div' => array('class' => 'control')));
         ?>
     </div>
-    <div class="control-group large-33">
+    <div class="control-group large-20">
         <?php
         echo $this->Form->label('Centro.polaridad', __('Polaridad'));
         echo $this->Form->input('Centro.polaridad', array(
@@ -130,6 +130,18 @@ echo $this->Form->create('Centros',array(
             'empty' => __('Seleccionar')
             )
         );
+        ?>
+    </div>
+    <div class="control-group large-20">
+        <?php
+        echo $this->Form->label('Centro.depmuxnac', __('Fuente Mux. Nacionales'));
+        echo $this->Form->input('Centro.depmuxnac', array('div' => array('class' => 'control')));
+        ?>
+    </div>
+    <div class="control-group large-20">
+        <?php
+        echo $this->Form->label('Centro.depmuxaut', __('Fuente Mux. Autonómico'));
+        echo $this->Form->input('Centro.depmuxaut', array('div' => array('class' => 'control')));
         ?>
     </div>
     <div class="control-group large-100">
