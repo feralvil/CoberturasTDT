@@ -75,7 +75,7 @@ $this->Js->event('click', $functab);
         }
         ?>
     </div>
-    <div id="coberturas" class="tabs-content">
+    <div id="coberturas" class="tabs-content hide-all">
         <h2><?php echo __('Resumen de cobertura del municipio');?></h2>
         <?php
         if (!empty($municipio['Cobertura'])){
@@ -134,7 +134,7 @@ $this->Js->event('click', $functab);
     <?php
     if (!empty($municipio['Centros'])){
     ?>
-        <div id="centros" class="tabs-content">
+        <div id="centros" class="tabs-content hide-all">
             <h2>
                 <?php
                 echo __('Centros TDT de la Generalitat que cubren el municipio');
