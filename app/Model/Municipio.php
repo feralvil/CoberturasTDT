@@ -6,7 +6,7 @@
  * @author alfonso_fer
  */
 class Municipio extends AppModel {
-    public $hasMany = array('Cobertura');
+    public $hasMany = array('Cobertura', 'Nucleo');
 }
 
 ?>

@@ -170,6 +170,7 @@ if ($nmunicipios > 0){
             <th><?php echo __('Provincia');?></th>
             <th><?php echo __('Municipio');?></th>
             <th><?php echo __('Habitantes (2015)');?></th>
+            <th><?php echo __('Hogares (2011)');?></th>
             <th><?php echo __('Centros TDT');?></th>
         </tr>
 <?php
@@ -191,6 +192,11 @@ if ($nmunicipios > 0){
                 <td class="content-right">
                     <?php
                         echo $this->Number->format($municipio['Municipio']['poblacion'], array('places' => 0, 'before' => '', 'thousands' => '.'));
+                    ?>
+                </td>
+                <td class="content-right">
+                    <?php
+                        echo $this->Number->format($municipio['Municipio']['hogares'], array('places' => 0, 'before' => '', 'thousands' => '.'));
                     ?>
                 </td>
                 <td class="content-right"><?php echo count($municipio['Cobertura']);?></td>
