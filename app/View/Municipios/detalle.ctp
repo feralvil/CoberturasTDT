@@ -30,6 +30,7 @@ $this->Js->event('click', $functab);
                 <th><?php echo __('Municipio'); ?></th>
                 <th><?php echo __('Habitantes (2015)'); ?></th>
                 <th><?php echo __('Hogares (2011)'); ?></th>
+                <th><?php echo __('Idioma'); ?></th>
             </tr>
             <tr>
                 <td><?php echo $municipio['Municipio']['id'];?></td>
@@ -37,6 +38,15 @@ $this->Js->event('click', $functab);
                 <td><?php echo $municipio['Municipio']['nombre'];?></td>
                 <td class='content-right'><?php echo $this->Number->format($municipio['Municipio']['poblacion'], array('places' => 0, 'before' => '', 'thousands' => '.'));?></td>
                 <td class='content-right'><?php echo $this->Number->format($municipio['Municipio']['hogares'], array('places' => 0, 'before' => '', 'thousands' => '.'));?></td>
+                <td>
+                    <?php
+                    $idioma = __('Castellano');
+                    if ($municipio['Municipio']['idioma'] == 'VA'){
+                        $idioma = __('Valencià');
+                    }
+                    echo $idioma;
+                    ?>
+                </td>
             </tr>
         </table>
         <h3><?php echo __('Unidades de Población del Municipio');?></h3>

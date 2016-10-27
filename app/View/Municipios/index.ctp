@@ -43,7 +43,7 @@ echo $this->Form->hidden('irapag', array('value' => '0'));
     ?>
 </h4>
 <fieldset class="column-group gutters">
-    <div class="control-group large-50">
+    <div class="control-group large-30">
         <div class="column-group gutters">
             <?php
             echo $this->Form->label('Municipio.provincia', __('Provincia'), array('class' => 'content-right large-20'));
@@ -51,7 +51,7 @@ echo $this->Form->hidden('irapag', array('value' => '0'));
             ?>
         </div>
     </div>
-    <div class="control-group large-50">
+    <div class="control-group large-40">
         <div class="column-group gutters">
             <?php
             echo $this->Form->label('Municipio.nombre', __('Municipio'), array('class' => 'content-right large-20'));
@@ -63,6 +63,15 @@ echo $this->Form->hidden('irapag', array('value' => '0'));
                     'alt' => 'Buscar', 'title' => 'Buscar', 'escape' => false, 'class' => 'ink-button blue'));
                 ?>
             </div>
+        </div>
+    </div>
+    <div class="control-group large-30">
+        <div class="column-group gutters">
+            <?php
+            $opciones = array('ES' => __('Castellano'), 'VA' => __('Valencià'));
+            echo $this->Form->label('Municipio.idioma', __('Idioma'), array('class' => 'content-right large-20'));
+            echo $this->Form->input('idioma', array('options' => $opciones, 'empty' => __('Seleccionar Idioma'), 'div' => 'control large-80'));
+            ?>
         </div>
     </div>
 </fieldset>
@@ -171,10 +180,15 @@ if ($nmunicipios > 0){
             <th><?php echo __('Municipio');?></th>
             <th><?php echo __('Habitantes (2015)');?></th>
             <th><?php echo __('Hogares (2011)');?></th>
+            <th><?php echo __('Idioma');?></th>
             <th><?php echo __('Centros TDT');?></th>
         </tr>
 <?php
         foreach ($municipios as $municipio) {
+            $idioma = __('Castellano');
+            if ($municipio['Municipio']['idioma'] == 'VA'){
+                $idioma = __('Valencià');
+            }
 ?>
             <tr>
                 <td class='content-center'>
@@ -199,6 +213,7 @@ if ($nmunicipios > 0){
                         echo $this->Number->format($municipio['Municipio']['hogares'], array('places' => 0, 'before' => '', 'thousands' => '.'));
                     ?>
                 </td>
+                <td class="content-center"><?php echo $idioma;?></td>
                 <td class="content-right"><?php echo count($municipio['Cobertura']);?></td>
             </tr>
 <?php

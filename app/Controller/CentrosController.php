@@ -496,8 +496,8 @@ class CentrosController extends AppController {
     }
 
     public function mapadet($id = null){
-        $this->set('title_for_layout', __('Mapa de Centro TDT'));
         $this->layout = 'mapa';
+        $this->set('title_for_layout', __('Mapa de Centro TDT'));
 
         $this->Centro->id = $id;
         if (!$this->Centro->exists()) {

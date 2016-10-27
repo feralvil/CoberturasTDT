@@ -28,13 +28,13 @@
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
-		//echo $this->Html->css('leaflet');
+		echo $this->Html->css('ol');
 		echo $this->Html->css('ink');
 
+		echo $this->Html->script('ol'); // Incluimos ol.js
 		echo $this->Html->script('jquery'); // Incluimos la bilbioteca JQuery
 		echo $this->Html->script('ink-all'); // Incluimos el JS de Ink
 		echo $this->Html->script('autoload'); // Incluimos Autoload.js
-		//echo $this->Html->script('leaflet'); // Incluimos Leaflet.js
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
@@ -43,7 +43,6 @@
 	<style>
 		#map {
 			height: 600px;
-			width: 100%;
 	  	}
  	</style>
 </head>
@@ -69,8 +68,7 @@
 		</div>
 	</div>
     	<?php
-            echo $this->Js->writeBuffer(); // Write cached scripts (para JQuery)
-            //echo $this->element('sql_dump');
+            echo $this->Js->writeBuffer();
         ?>
 </body>
 </html>

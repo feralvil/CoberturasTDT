@@ -22,7 +22,7 @@ class MunicipiosController extends AppController {
             // Acciones por defecto
             $accPerm = array();
             if ($rol == 'colab') {
-                $accPerm = array('index', 'detalle', 'carta', 'cartapdf', 'cartaserv', 'pdfdetalle', 'xlsmunicipios', 'hogares');
+                $accPerm = array('index', 'detalle', 'carta', 'cartapdf', 'cartaserv', 'pdfdetalle', 'xlsmunicipios', 'hogares', 'idioma');
             }
             elseif ($rol == 'consum') {
                 $accPerm = array('index', 'detalle', 'pdfdetalle', 'xlsmunicipios');
@@ -55,7 +55,7 @@ class MunicipiosController extends AppController {
             // Condiciones iniciales:
             $tampag = 30;
             $pagina = 1;
-            // Select de Flota
+            // Select de Provincia
             if (!empty($this->request->data['Municipios']['provincia'])){
                 $addcond = array('Municipio.cpro'  => $this->request->data['Municipios']['provincia']);
                 $condiciones = array_merge($addcond, $condiciones);
@@ -63,6 +63,11 @@ class MunicipiosController extends AppController {
             // Campo de Municipio
             if (!empty($this->request->data['Municipios']['nombre'])){
                 $addcond = array('Municipio.nombre LIKE '  => '%'.$this->request->data['Municipios']['nombre'].'%');
+                $condiciones = array_merge($addcond, $condiciones);
+            }
+            // Select de Idioma
+            if (!empty($this->request->data['Municipios']['idioma'])){
+                $addcond = array('Municipio.idioma'  => $this->request->data['Municipios']['idioma']);
                 $condiciones = array_merge($addcond, $condiciones);
             }
             // Cambio de página
@@ -391,6 +396,72 @@ class MunicipiosController extends AppController {
             }
             else{
                 $this->set('title_for_layout', __('Importar datos de Hogares de Municipios'));
+                $this->set('municipios', $municipios);
+            }
+        }
+    }
+
+    public function idioma(){
+        $this->Municipio->recursive = -1;
+        // Buscamos el fichero
+        App::uses('Folder', 'Utility');
+        App::uses('File', 'Utility');
+        // Comrpobamos si existe
+        $ruta = 'files' . DS . 'ImportarIdioma.ods';
+        $fichero = new File($ruta, false);
+        if ($fichero->exists()){
+            // Cargamos la clase para leer el fichero Excel:
+            App::import('Vendor', 'Classes/PHPExcel');
+            // Intentamos cargar el fichero
+            try{
+                $tipoFich = PHPExcel_IOFactory::identify($ruta);
+                $objReader = PHPExcel_IOFactory::createReader($tipoFich);
+                // Sólo nos interesa cargar los datos:
+                $objReader->setReadDataOnly(true);
+                $objPHPExcel = $objReader->load($ruta);
+            }
+            catch(Exception $e){
+                die("Error al cargar el fichero de datos: ".$e->getMessage());
+            }
+            // Nos vamos a la hoja de Catastro
+            // Fijamos como hoja activa la primera (sólo se importa una)
+            $objPHPExcel->setActiveSheetIndex(0);
+            // Obtenemos el número de filas de la hoja:
+            $maxfila = $objPHPExcel->getActiveSheet()->getHighestRow() + 1;
+            $fila = 2;
+            $municipios = array();
+            while (($fila < $maxfila) && ($objPHPExcel->getActiveSheet()->getCell("A" . $fila)->getValue()!= "")){
+                $idmuni = $objPHPExcel->getActiveSheet()->getCell("A" . $fila)->getValue();
+                $municipio = $this->Municipio->read(null, $idmuni);
+                $idioma = 'ES';
+                if ($objPHPExcel->getActiveSheet()->getCell("B" . $fila)->getValue() == 'V'){
+                    $idioma = 'VA';
+                }
+                $municipio['Municipio']['lengua'] = $idioma;
+                $municipio['Municipio']['nommuni'] = $objPHPExcel->getActiveSheet()->getCell("C" . $fila)->getValue();
+                $municipios[] = $municipio;
+                $fila++;
+            }
+            if ($this->request->is('post') || $this->request->is('put')) {
+                // Aquí
+                $nmunicipios = 0;
+                foreach ($municipios as $municipio) {
+                    $this->Municipio->read(null, $municipio['Municipio']['id']);
+                    $this->Municipio->set(array('idioma' => $municipio['Municipio']['lengua'],));
+                    if ($this->Municipio->save()){
+                        $nmunicipios++;
+                    }
+                    else{
+                        $this->Session->setFlash(__('Error al guardar datos de Idioma del Municipio') . ' ' . $municipio['Municipio']['nombre'], 'default', array('class' => 'ink-alert basic error'));
+                        $this->redirect(array('controller' => 'municipios', 'action' => 'hogares'));
+                    }
+                }
+                $this->Session->setFlash(__('Datos de Idioma de') . ' ' . $nmunicipios . ' ' . __('Municipios importados correctamente'), 'default', array('class' => 'ink-alert basic success'));
+                $this->redirect(array('controller' => 'municipios', 'action' => 'index'));
+
+            }
+            else{
+                $this->set('title_for_layout', __('Importar datos de Idioma de Municipios'));
                 $this->set('municipios', $municipios);
             }
         }

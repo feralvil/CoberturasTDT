@@ -57,15 +57,17 @@ $estiloCentro = array(
 // Título de la Hoja:
 $objPHPExcel->getActiveSheet()->setCellValue('A1', __('Cobertura de Municipios de la Comunitat Valenciana'));
 $objPHPExcel->getActiveSheet()->getStyle('A1')->applyFromArray($estiloTitulo);
-$objPHPExcel->getActiveSheet()->mergeCells('A1:E1');
+$objPHPExcel->getActiveSheet()->mergeCells('A1:G1');
 
 // Fila de títulos:
 $objPHPExcel->getActiveSheet()->setCellValue("A3", __('Cod. INE'));
 $objPHPExcel->getActiveSheet()->setCellValue("B3", __('Provincia'));
 $objPHPExcel->getActiveSheet()->setCellValue("C3", __('Municipio'));
 $objPHPExcel->getActiveSheet()->setCellValue("D3", __('Habitantes (2015)'));
-$objPHPExcel->getActiveSheet()->setCellValue("E3", __('Centros TDT'));
-$objPHPExcel->getActiveSheet()->getStyle('A3:E3')->applyFromArray($estiloTh);
+$objPHPExcel->getActiveSheet()->setCellValue("E3", __('Hogares (2011)'));
+$objPHPExcel->getActiveSheet()->setCellValue("F3", __('Idioma'));
+$objPHPExcel->getActiveSheet()->setCellValue("G3", __('Centros TDT'));
+$objPHPExcel->getActiveSheet()->getStyle('A3:G3')->applyFromArray($estiloTh);
 
 // Imprimimos los Municipios:
 $fila =  $finicio = 3;
@@ -74,19 +76,27 @@ foreach ($municipios as $municipio) {
     $objPHPExcel->getActiveSheet()->setCellValue("A" . $fila, $municipio['Municipio']['id']);
     $objPHPExcel->getActiveSheet()->setCellValue("B" . $fila, $municipio['Municipio']['provincia']);
     $objPHPExcel->getActiveSheet()->setCellValue("C" . $fila, $municipio['Municipio']['nombre']);
-    $objPHPExcel->getActiveSheet()->setCellValue("D" . $fila, $this->Number->format($municipio['Municipio']['poblacion'], array('places' => 0, 'before' => '', 'thousands' => '.')));
-    $objPHPExcel->getActiveSheet()->setCellValue("E" . $fila, count($municipio['Cobertura']));
+    $objPHPExcel->getActiveSheet()->setCellValue("D" . $fila, $municipio['Municipio']['poblacion']);
+    $objPHPExcel->getActiveSheet()->setCellValue("E" . $fila, $municipio['Municipio']['hogares']);
+    $idioma = __('Castellano');
+    if ($municipio['Municipio']['idioma'] == 'VA'){
+        $idioma = __('Valencià');
+    }
+    $objPHPExcel->getActiveSheet()->setCellValue("F" . $fila, $idioma);
+    $objPHPExcel->getActiveSheet()->setCellValue("G" . $fila, count($municipio['Cobertura']));
     if (($fila % 2) == 1){
-        $objPHPExcel->getActiveSheet()->getStyle('A'.$fila.':'.'E'.$fila)->applyFromArray($estiloRelleno);
+        $objPHPExcel->getActiveSheet()->getStyle('A'.$fila.':'.'G'.$fila)->applyFromArray($estiloRelleno);
     }
 }
 $filafin = $fila;
-$objPHPExcel->getActiveSheet()->getStyle('A'.$finicio.':'.'E'.$fila)->applyFromArray($estiloCelda);
+$objPHPExcel->getActiveSheet()->getStyle('A'.$finicio.':'.'G'.$fila)->applyFromArray($estiloCelda);
 $objPHPExcel->getActiveSheet()->getColumnDimension('A')->setAutoSize(true);
 $objPHPExcel->getActiveSheet()->getColumnDimension('B')->setAutoSize(true);
 $objPHPExcel->getActiveSheet()->getColumnDimension('C')->setAutoSize(true);
 $objPHPExcel->getActiveSheet()->getColumnDimension('D')->setAutoSize(true);
 $objPHPExcel->getActiveSheet()->getColumnDimension('E')->setAutoSize(true);
+$objPHPExcel->getActiveSheet()->getColumnDimension('F')->setAutoSize(true);
+$objPHPExcel->getActiveSheet()->getColumnDimension('G')->setAutoSize(true);
 
 // Generamos el fichero:
 header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');

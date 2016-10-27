@@ -79,3 +79,10 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# Archivos de mapa:
+app/webroot/js/ol.js
+app/webroot/css/ol.css
+app/webroot/img/marcador.png
+app/View/Layouts/mapa.ctp
+app/View/Centros/mapadet.ctp
