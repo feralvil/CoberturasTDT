@@ -135,7 +135,7 @@ if ($ncoberturas > 0){
             <th><?php echo __('Centro');?></th>
             <th><?php echo __('Nº Múltiplex');?></th>
             <th><?php echo __('Municipio');?></th>
-            <th><?php echo __('Población (2015)');?></th>
+            <th><?php echo __('Población (2016)');?></th>
             <th><?php echo __('Hab. Cubiertos (%)');?></th>
         </tr>
 <?php

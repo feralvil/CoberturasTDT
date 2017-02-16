@@ -28,7 +28,7 @@ $this->Js->event('click', $functab);
                 <th><?php echo __('Cod. INE'); ?></th>
                 <th><?php echo __('Provincia'); ?></th>
                 <th><?php echo __('Municipio'); ?></th>
-                <th><?php echo __('Habitantes (2015)'); ?></th>
+                <th><?php echo __('Habitantes (2016)'); ?></th>
                 <th><?php echo __('Hogares (2011)'); ?></th>
                 <th><?php echo __('Idioma'); ?></th>
             </tr>
@@ -57,7 +57,7 @@ $this->Js->event('click', $functab);
                 <tr>
                     <th><?php echo __('Cod. INE'); ?></th>
                     <th><?php echo __('Unidad'); ?></th>
-                    <th><?php echo __('Habitantes (2015)'); ?></th>
+                    <th><?php echo __('Habitantes (2016)'); ?></th>
                 </tr>
                 <?php
                 foreach ($municipio['Nucleo'] as $nucleo) {

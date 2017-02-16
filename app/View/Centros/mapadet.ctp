@@ -32,14 +32,22 @@
     }));
 
     var vectorSource = new ol.source.Vector({
-       features: [centro]
-     });
+        features: [centro]
+    });
 
-     var vectorLayer = new ol.layer.Vector({
-       source: vectorSource,
-     });
+    var vectorLayer = new ol.layer.Vector({
+        source: vectorSource,
+    });
 
-     var rasterLayer = new ol.layer.Tile({source: new ol.source.OSM()});
+    /*var wmsICV = new new ol.layer.Tile({
+        title: 'Ortofoto actual servei WMTS',
+        source: new ol.source.TileWMS({
+            url: 'http://terramapas.icv.gva.es/ortoactualidad/',
+            params: {LAYERS: 'ortoactualidad', VERSION: '1.1.1'}
+        })
+    });*/
+
+    var rasterLayer = new ol.layer.Tile({source: new ol.source.OSM()});
 
     var map = new ol.Map({
         target: 'map',

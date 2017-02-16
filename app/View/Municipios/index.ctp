@@ -178,7 +178,7 @@ if ($nmunicipios > 0){
             <th><?php echo __('Cod. INE');?></th>
             <th><?php echo __('Provincia');?></th>
             <th><?php echo __('Municipio');?></th>
-            <th><?php echo __('Habitantes (2015)');?></th>
+            <th><?php echo __('Habitantes (2016)');?></th>
             <th><?php echo __('Hogares (2011)');?></th>
             <th><?php echo __('Idioma');?></th>
             <th><?php echo __('Centros TDT');?></th>

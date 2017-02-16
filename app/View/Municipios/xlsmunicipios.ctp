@@ -63,7 +63,7 @@ $objPHPExcel->getActiveSheet()->mergeCells('A1:G1');
 $objPHPExcel->getActiveSheet()->setCellValue("A3", __('Cod. INE'));
 $objPHPExcel->getActiveSheet()->setCellValue("B3", __('Provincia'));
 $objPHPExcel->getActiveSheet()->setCellValue("C3", __('Municipio'));
-$objPHPExcel->getActiveSheet()->setCellValue("D3", __('Habitantes (2015)'));
+$objPHPExcel->getActiveSheet()->setCellValue("D3", __('Habitantes (2016)'));
 $objPHPExcel->getActiveSheet()->setCellValue("E3", __('Hogares (2011)'));
 $objPHPExcel->getActiveSheet()->setCellValue("F3", __('Idioma'));
 $objPHPExcel->getActiveSheet()->setCellValue("G3", __('Centros TDT'));
