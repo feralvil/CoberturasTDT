@@ -18,7 +18,7 @@ class CoberturasController extends AppController {
             // Acciones por defecto
             $accPerm = array();
             if ($rol == 'colab') {
-                $accPerm = array('index', 'detalle', 'editar', 'agregar', 'cobcentro', 'borrar');
+                $accPerm = array('index', 'detalle', 'editar', 'agregar', 'cobcentro', 'borrar', 'xlscoberturas');
             }
             elseif ($rol == 'consum') {
                 $accPerm = array('index', 'detalle');
@@ -234,6 +234,21 @@ class CoberturasController extends AppController {
             $this->Session->setFlash(__('Error al eliminar la Cobertura seleccionada'), 'default', array('class' => 'ink-alert basic error'));
             $this->redirect(array('controller' => 'centros', 'action' => 'detalle', $cobertura['Cobertura']['centro_id']));
         }
+    }
+
+    public function xlscoberturas(){
+        $coberturas = $this->Cobertura->find('all');
+        foreach ($coberturas as &$cobertura) {
+            $cobertura['nmux'] = 0;
+            $nmux = $this->Cobertura->Centro->Emision->find('count', array(
+                'conditions' => array(
+                    'Emision.centro_id' => $cobertura['Cobertura']['centro_id'],
+                )
+            ));
+            $cobertura['nmux'] = $nmux;
+        }
+        $this->set('coberturas', $coberturas);
+        $this->layout = 'xls';
     }
 }
 ?>

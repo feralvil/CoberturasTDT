@@ -72,14 +72,14 @@ echo $this->Form->hidden('irapag', array('value' => '0'));
 if ($ncoberturas > 0){
 ?>
     <div class="column-group gutters">
-        <div class="large-40 control-group column-group gutters">
+        <div class="large-30 control-group column-group gutters">
             <?php
             $opciones = array(20 => 20, 30 => 30, 50 => 50, $this->Paginator->counter('{:count}') => 'Todos');
             echo $this->Form->label('Coberturas.regPag', __('Coberturas por página'), array('class' => 'content-right large-60'));
             echo $this->Form->input('regPag', array('options' => $opciones, 'empty' => __('Seleccionar'), 'div' => 'control large-40'));
             ?>
         </div>
-        <div class="large-60 content-center">
+        <div class="large-40 content-center">
             <nav class="ink-navigation push-center">
                 <ul class="pagination blue shadowed rounded">
                 <?php
@@ -128,6 +128,15 @@ if ($ncoberturas > 0){
 
                 </ul>
             </nav>
+        </div>
+        <div class="control-group large-30">
+            <?php
+            echo $this->Html->Link(
+                 '<i class = "icon-calendar"></i> '.__('Excel'),
+                 array('controller' => 'coberturas', 'action' => 'xlscoberturas'),
+                 array('class' => 'ink-button blue', 'title' => __('Excel'), 'alt' => __('Exportar a Excel'), 'target' => '_blank',  'escape' => false)
+            );
+            ?>
         </div>
     </div>
     <table class="ink-table bordered alternating hover">
