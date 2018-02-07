@@ -96,6 +96,7 @@ class EventosController extends AppController {
         $dir = new Folder(WWW_ROOT . 'files');
         $ficheros = $dir->find('Historico.*\.csv', true);
         $historicos = array();
+        $anyos = array();
         $mesnom = array(
             '01' => __('Enero'), '02' => __('Febrero'), '03' => __('Marzo'),
             '04' => __('Abril'), '05' => __('Mayo'), '06' => __('Junio'),
@@ -107,9 +108,17 @@ class EventosController extends AppController {
             $anyo = substr($nom_fichero, 10, 4);
             $mes = substr($nom_fichero, 15, 2);
             $mestxt = $mesnom[$mes];
-            $historicos[$fecha] = $mestxt . ' ' . $anyo;
-        }
+            //$historicos[$fecha] = $mestxt . ' ' . $anyo;
+            $historicos[$fecha] = $mestxt;
+        }        
+        
+        $historicos = array_reverse($historicos);
         $this->set('historicos', $historicos);
+        foreach ($historicos as $fecha => $fecha_nom) {
+            $anyo = substr($fecha, 0, 4);
+            $anyos [$anyo] = $anyo;
+        }
+        $this->set('anyos', $anyos); 
 
         // Comprobamos si hemos recibido datos del formulario:
         $condiciones = array();

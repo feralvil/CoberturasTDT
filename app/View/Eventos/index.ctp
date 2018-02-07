@@ -4,7 +4,7 @@ $next = $this->Paginator->counter('{:page}') + 1;
 $prev = $this->Paginator->counter('{:page}') - 1;
 $ultima = $this->Paginator->counter('{:pages}');
 $fecha = 'Nada';
-if (isset($this->request->data['Evento'])){
+if (isset($this->request->data['Evento']['historico'])){
     $fecha  = $this->request->data['Evento']['historico'];
 }
 $this->Js->get("#anterior");
@@ -109,13 +109,23 @@ echo $this->Form->hidden('irapag', array('value' => '0'));
         <div class="control-group large-30">
             <div class="column-group gutters">
                 <?php
-                echo $this->Form->label('Evento.historico', __('Histórico'), array('class' => 'content-right large-30'));
-                echo $this->Form->input('Evento.historico', array('options' => $historicos, 'empty' => __('Seleccionar'), 'div' => 'control large-50'));
-                if ((isset($this->request->data['Evento']['historico'])) && ($this->request->data['Evento']['historico'] != "")) {
-                    echo $this->Form->button(
-                        '<i class = "icon-calendar"></i>',
-                        array('id' => 'historico', 'class' => 'ink-button blue', 'title' => __('Exportar a Excel'), 'alt' => __('Exportar a Excel'), 'escape' => false)
-                    );
+                echo $this->Form->label('Evento.anyos', __('Histórico'), array('class' => 'content-right large-20'));
+                echo $this->Form->input('Evento.anyos', array('options' => $anyos, 'empty' => __('Año'), 'div' => 'control large-30'));
+                if ((isset($this->request->data['Evento']['anyos'])) && ($this->request->data['Evento']['anyos'] != "")) {
+                    $anyo = $this->request->data['Evento']['anyos'];
+                    $histsel = array();
+                    foreach ($historicos as $mesnum => $mestxt) {
+                        if (strncmp($mesnum, $anyo, 4) == 0){
+                            $histsel[$mesnum] = $mestxt;
+                        }
+                    }
+                    echo $this->Form->input('Evento.historico', array('options' => $histsel, 'empty' => __('Mes'), 'div' => 'control large-30'));
+                    if ((isset($this->request->data['Evento']['historico'])) && ($this->request->data['Evento']['historico'] != "")) {
+                        echo $this->Form->button(
+                            '<i class = "icon-calendar"></i>',
+                            array('id' => 'historico', 'class' => 'ink-button blue', 'title' => __('Exportar a Excel'), 'alt' => __('Exportar a Excel'), 'escape' => false)
+                        );
+                    }
                 }
                 ?>
             </div>
