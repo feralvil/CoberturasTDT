@@ -13,7 +13,7 @@
     </div>
     <div class='large-25'>
         <?php
-        echo $this->Html->image("logochme.png", array(
+        echo $this->Html->image("cap_hisenda.png", array(
             "alt" => "DGTI",
             "title" => 'DGTI',
             'url' => array('controller' => 'centros', 'action' => 'index')
